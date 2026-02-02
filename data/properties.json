@@ -1,0 +1,14 @@
+[
+  {
+    "bhk": 3,
+    "location": "Velachery, Chennai",
+    "price": "95 Lakhs",
+    "price_value": 9500000
+  },
+  {
+    "bhk": 2,
+    "location": "Medavakkam, Chennai",
+    "price": "88 Lakhs",
+    "price_value": 8800000
+  }
+]
