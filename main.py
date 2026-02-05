@@ -1,6 +1,9 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from api.chat import chat_router
-from core.config import GOOGLE_API_KEY
+from core.config import GOOGLE_API_KEY, CORS_ORIGINS
+
 
 # -------------------------------------------------
 # FastAPI App Initialization
@@ -12,12 +15,26 @@ app = FastAPI(
     version="1.0.0"
 )
 
+
+# -------------------------------------------------
+# CORS Middleware (VERY IMPORTANT)
+# -------------------------------------------------
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=CORS_ORIGINS,   # Only trusted origins
+    allow_credentials=True,
+    allow_methods=["*"],         # Includes OPTIONS automatically
+    allow_headers=["*"],
+)
+
+
 # -------------------------------------------------
 # Routes
 # -------------------------------------------------
 
-# Chat API (used by frontend)
 app.include_router(chat_router)
+
 
 # -------------------------------------------------
 # Health Check
@@ -25,12 +42,10 @@ app.include_router(chat_router)
 
 @app.get("/")
 def health_check():
-    """
-    Basic health check to confirm backend is running
-    """
     return {
         "status": "Backend is running successfully"
     }
+
 
 # -------------------------------------------------
 # Gemini Key Load Status (Internal)
@@ -38,10 +53,6 @@ def health_check():
 
 @app.get("/internal/ai-status")
 def ai_status():
-    """
-    Confirms whether the Gemini API key is loaded.
-    DOES NOT make an external API call.
-    """
     return {
         "gemini_key_loaded": bool(GOOGLE_API_KEY)
     }
