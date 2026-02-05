@@ -22,12 +22,19 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=CORS_ORIGINS,   # ✅ Loaded from config
+    allow_origins=CORS_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=[
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+        
+    ],
+    allow_headers=["*"],   # headers are fine with star
 )
-
 
 # -------------------------------------------------
 # Routes
