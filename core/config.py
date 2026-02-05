@@ -19,6 +19,7 @@ CORS_ORIGINS = [
     "http://localhost:3000",   # React default
     "http://127.0.0.1:3000",
     # Add production domain later:
-    #"https://chat.propcent.in"
+    "https://chat.propcent.in"
 ]
+
 
