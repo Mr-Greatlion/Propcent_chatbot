@@ -17,20 +17,16 @@ app = FastAPI(
 
 
 # -------------------------------------------------
-# CORS Middleware (VERY IMPORTANT)
+# CORS Middleware (CRITICAL FOR FRONTEND)
 # -------------------------------------------------
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000"
-    ],
+    allow_origins=CORS_ORIGINS,   # ✅ Loaded from config
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 
 # -------------------------------------------------
@@ -41,10 +37,10 @@ app.include_router(chat_router)
 
 
 # -------------------------------------------------
-# Health Check
+# Health Check (Used by Load Balancers / DevOps)
 # -------------------------------------------------
 
-@app.get("/")
+@app.get("/", tags=["Health"])
 def health_check():
     return {
         "status": "Backend is running successfully"
@@ -52,10 +48,10 @@ def health_check():
 
 
 # -------------------------------------------------
-# Gemini Key Load Status (Internal)
+# Internal AI Status (DO NOT EXPOSE PUBLICLY LATER)
 # -------------------------------------------------
 
-@app.get("/internal/ai-status")
+@app.get("/internal/ai-status", tags=["Internal"])
 def ai_status():
     return {
         "gemini_key_loaded": bool(GOOGLE_API_KEY)
