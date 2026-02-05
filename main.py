@@ -34,6 +34,7 @@ app.add_middleware(
         
     ],
     allow_headers=["*"],   # headers are fine with star
+    expose_headers=["*"],
 )
 
 # -------------------------------------------------
@@ -63,3 +64,4 @@ def ai_status():
     return {
         "gemini_key_loaded": bool(GOOGLE_API_KEY)
     }
+
