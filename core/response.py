@@ -13,23 +13,23 @@ def generate_response(message: str) -> str:
     # ---------------------------------
 
     if intent == "GREETING":
-        response = (
+        return (
             "Hello! 👋 I can help you find verified properties, "
-            "give investment guidance, and answer real estate questions."
+            "provide investment guidance, and answer real estate questions."
         )
 
     # ---------------------------------
-    # UNIT CONVERSION → AI handles better
+    # UNIT CONVERSION → AI GOOD HERE
     # ---------------------------------
 
-    elif intent == "UNIT_CONVERSION":
-        response = ask_gemini(message)
+    if intent == "UNIT_CONVERSION":
+        return ask_gemini(message)
 
     # ---------------------------------
     # PROPERTY SEARCH → DATABASE ONLY
     # ---------------------------------
 
-    elif intent == "PROPERTY_QUERY":
+    if intent == "PROPERTY_QUERY":
 
         properties = fetch_properties(
             city=intent_data.get("city"),
@@ -37,32 +37,35 @@ def generate_response(message: str) -> str:
         )
 
         if not properties:
-            response = (
-                "I couldn't find properties matching your criteria. "
-                "Try adjusting your budget or location."
+            return (
+                "I couldn't find verified properties matching your criteria. "
+                "Try increasing your budget or changing the location."
             )
-        else:
-            response = properties
+
+        # ✅ FORMAT HERE (NOT in service)
+        reply = "Here are some verified properties:\n\n"
+
+        for p in properties[:5]:
+
+            price_lakh = p["price"] / 100000
+
+            reply += (
+                f"• {p.get('title')} — ₹{price_lakh:.0f} Lakhs\n"
+                f"Location: {p.get('location')}\n\n"
+            )
+
+        # ✅ Only refine DATABASE responses
+        return ai_refine(reply)
 
     # ---------------------------------
-    # INVESTMENT + GENERAL → AI THINKS
+    # AI KNOWLEDGE QUESTIONS
     # ---------------------------------
 
-    elif intent in ["INVESTMENT_ADVICE", "GENERAL_QUERY"]:
-        response = ask_gemini(message)
+    if intent in ["INVESTMENT_ADVICE", "GENERAL_QUERY"]:
+        return ask_gemini(message)
 
     # ---------------------------------
-    # SAFETY FALLBACK
+    # FALLBACK
     # ---------------------------------
 
-    else:
-        response = ask_gemini(message)
-
-    # ---------------------------------
-    # FINAL PROFESSIONAL POLISH
-    # ---------------------------------
-
-    response = ai_refine(response)
-
-    return response
-
+    return ask_gemini(message)
