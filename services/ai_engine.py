@@ -1,62 +1,81 @@
 import requests
-from core.config import GOOGLE_API_KEY  # ✅ THIS WAS MISSING
+from core.config import GOOGLE_API_KEY
 
-# -------------------------------------------------
-# Gemini Configuration
-# -------------------------------------------------
 
 GEMINI_MODEL = "models/gemini-2.5-flash"
+
 GEMINI_ENDPOINT = (
     f"https://generativelanguage.googleapis.com/v1beta/"
     f"{GEMINI_MODEL}:generateContent"
 )
 
+
 # -------------------------------------------------
-# AI Refinement Layer (USED BY CHAT)
+# REAL AI THINKING
 # -------------------------------------------------
 
-def ai_refine(text: str) -> str:
-    """
-    Uses Google Gemini to:
-    - Fix spelling mistakes
-    - Improve grammar
-    - Make responses professional
-    - Keep meaning EXACTLY the same
-    """
-
-    # 🔒 Safety checks
-    if not text:
-        return "Could you please clarify what you are looking for?"
-
-    if len(text.strip()) < 40:
-        # Too short → don't send to AI
-        return text
+def ask_gemini(prompt: str) -> str:
 
     if not GOOGLE_API_KEY:
-        return text  # fallback if key missing
+        return "AI service is temporarily unavailable."
 
     try:
+
         response = requests.post(
             f"{GEMINI_ENDPOINT}?key={GOOGLE_API_KEY}",
             json={
-                "contents": [
-                    {
-                        "parts": [
-                            {
-                                "text": (
-                                    "Rewrite the following message in a professional, "
-                                    "clear, and friendly tone without changing its meaning:\n\n"
-                                    + text
-                                )
-                            }
-                        ]
-                    }
-                ],
+                "contents": [{
+                    "parts": [{
+                        "text": (
+                            "You are a senior real estate advisor in India.\n"
+                            "Give practical, location-aware advice.\n"
+                            "Avoid generic responses.\n\n"
+                            f"User Question:\n{prompt}"
+                        )
+                    }]
+                }],
                 "generationConfig": {
-                    "temperature": 0.3,
-                    "topP": 0.9,
-                    "maxOutputTokens": 300
+                    "temperature": 0.4,
+                    "maxOutputTokens": 500
                 }
+            },
+            timeout=15
+        )
+
+        if response.status_code == 200:
+            return response.json()["candidates"][0]["content"]["parts"][0]["text"]
+
+        return "I couldn't process that request."
+
+    except Exception:
+        return "AI service is currently unavailable."
+
+
+# -------------------------------------------------
+# RESPONSE POLISHER
+# -------------------------------------------------
+
+def ai_refine(text: str) -> str:
+
+    if not text or len(text.strip()) < 30:
+        return text
+
+    if not GOOGLE_API_KEY:
+        return text
+
+    try:
+
+        response = requests.post(
+            f"{GEMINI_ENDPOINT}?key={GOOGLE_API_KEY}",
+            json={
+                "contents": [{
+                    "parts": [{
+                        "text": (
+                            "Rewrite professionally without changing meaning:\n\n"
+                            + text
+                        )
+                    }]
+                }]
             },
             timeout=10
         )
