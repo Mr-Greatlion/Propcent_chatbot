@@ -1,21 +1,24 @@
 import json
+from pathlib import Path
 
 
-DATA_FILE = "data/properties.json"
+DATA_FILE = Path("data/properties.json")
 
 
 # -------------------------------------------------
-# LOAD ALL PROPERTIES
+# LOAD ONCE (FAST)
 # -------------------------------------------------
 
 def load_properties():
-
     try:
         with open(DATA_FILE, "r") as f:
             return json.load(f)
-
     except Exception:
         return []
+
+
+# ⭐ Cached in memory
+PROPERTIES = load_properties()
 
 
 # -------------------------------------------------
@@ -24,34 +27,20 @@ def load_properties():
 
 def fetch_properties(city=None, max_price=None):
 
-    properties = load_properties()
+    results = PROPERTIES
 
-    results = []
+    # Filter by city
+    if city:
+        results = [
+            p for p in results
+            if p.get("city", "").lower() == city.lower()
+        ]
 
-    for prop in properties:
+    # Filter by price
+    if max_price:
+        results = [
+            p for p in results
+            if p.get("price", 0) <= max_price
+        ]
 
-        # Filter by city
-        if city and prop.get("city", "").lower() != city.lower():
-            continue
-
-        # Filter by price
-        if max_price and prop.get("price", 0) > max_price:
-            continue
-
-        results.append(prop)
-
-    # No matches
-    if not results:
-        return None
-
-    # Format nicely for AI / user
-    formatted = []
-
-    for p in results:
-
-        formatted.append(
-            f"• {p.get('title')} — ₹{p.get('price'):,}\n"
-            f"Location: {p.get('location')}"
-        )
-
-    return "\n\n".join(formatted)
+    return results  # ALWAYS return list
