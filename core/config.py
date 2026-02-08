@@ -20,6 +20,9 @@ CORS_ORIGINS = [
     "http://127.0.0.1:3000",
     # Add production domain later:
     "https://chat.propcent.in"
+    "https://propcent.in"
+    
 ]
+
 
 
