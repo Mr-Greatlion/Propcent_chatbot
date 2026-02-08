@@ -11,13 +11,13 @@ GEMINI_ENDPOINT = (
 
 
 # -------------------------------------------------
-# REAL AI THINKING
+# AI THINKING
 # -------------------------------------------------
 
-def ask_gemini(prompt: str) -> str:
+def ask_gemini(prompt: str):
 
     if not GOOGLE_API_KEY:
-        return "AI service is temporarily unavailable."
+        return "AI service unavailable."
 
     try:
 
@@ -28,8 +28,7 @@ def ask_gemini(prompt: str) -> str:
                     "parts": [{
                         "text": (
                             "You are a senior real estate advisor in India.\n"
-                            "Give practical, location-aware advice.\n"
-                            "Avoid generic responses.\n\n"
+                            "Give practical, location-aware advice.\n\n"
                             f"User Question:\n{prompt}"
                         )
                     }]
@@ -48,16 +47,16 @@ def ask_gemini(prompt: str) -> str:
         return "I couldn't process that request."
 
     except Exception:
-        return "AI service is currently unavailable."
+        return "AI service temporarily unavailable."
 
 
 # -------------------------------------------------
-# RESPONSE POLISHER
+# RESPONSE POLISH
 # -------------------------------------------------
 
-def ai_refine(text: str) -> str:
+def ai_refine(text: str):
 
-    if not text or len(text.strip()) < 30:
+    if not text or len(text) < 30:
         return text
 
     if not GOOGLE_API_KEY:
@@ -70,10 +69,7 @@ def ai_refine(text: str) -> str:
             json={
                 "contents": [{
                     "parts": [{
-                        "text": (
-                            "Rewrite professionally without changing meaning:\n\n"
-                            + text
-                        )
+                        "text": "Rewrite professionally:\n\n" + text
                     }]
                 }]
             },
