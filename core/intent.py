@@ -1,10 +1,11 @@
 import re
 
+
 def detect_intent_and_filters(message: str):
     msg = message.strip().lower()
 
     # -------------------------------
-    # 1️⃣ GREETING (FIRST)
+    # 1️⃣ GREETING
     # -------------------------------
     if msg in ["hi", "hello", "hey", "hai"]:
         return {
@@ -14,7 +15,7 @@ def detect_intent_and_filters(message: str):
         }
 
     # -------------------------------
-    # 2️⃣ UNIT / AREA CONVERSION (SECOND)
+    # 2️⃣ UNIT / AREA CONVERSION
     # -------------------------------
     if any(word in msg for word in [
         "sq feet", "sqft", "square feet",
@@ -29,24 +30,61 @@ def detect_intent_and_filters(message: str):
         }
 
     # -------------------------------
-    # 3️⃣ PROPERTY SEARCH (LAST)
+    # 3️⃣ INVESTMENT / AREA ADVICE ⭐⭐⭐
     # -------------------------------
-    city = None
-    max_price = None
+    investment_keywords = [
+        "best area",
+        "investment",
+        "roi",
+        "growth",
+        "future",
+        "appreciation",
+        "where should i buy",
+        "good area",
+        "hot locations"
+    ]
 
-    if "chennai" in msg:
-        city = "Chennai"
+    if any(word in msg for word in investment_keywords):
+        return {
+            "intent": "INVESTMENT_ADVICE",
+            "city": "Chennai" if "chennai" in msg else None,
+            "max_price": None
+        }
 
-    lakh_match = re.search(r"(\d+)\s*(l|lakh|lakhs)", msg)
-    crore_match = re.search(r"(\d+)\s*(c|cr|crore|crores)", msg)
+    # -------------------------------
+    # 4️⃣ PROPERTY SEARCH
+    # -------------------------------
+    property_keywords = [
+        "bhk", "flat", "apartment",
+        "house", "villa",
+        "budget", "under", "price"
+    ]
 
-    if lakh_match:
-        max_price = int(lakh_match.group(1)) * 100000
-    elif crore_match:
-        max_price = int(crore_match.group(1)) * 10000000
+    if any(word in msg for word in property_keywords):
 
+        city = "Chennai" if "chennai" in msg else None
+
+        lakh_match = re.search(r"(\d+)\s*(l|lakh|lakhs)", msg)
+        crore_match = re.search(r"(\d+)\s*(c|cr|crore|crores)", msg)
+
+        max_price = None
+
+        if lakh_match:
+            max_price = int(lakh_match.group(1)) * 100000
+        elif crore_match:
+            max_price = int(crore_match.group(1)) * 10000000
+
+        return {
+            "intent": "PROPERTY_QUERY",
+            "city": city,
+            "max_price": max_price
+        }
+
+    # -------------------------------
+    # 5️⃣ GENERAL AI QUESTION ⭐⭐⭐
+    # -------------------------------
     return {
-        "intent": "PROPERTY_QUERY",
-        "city": city,
-        "max_price": max_price
+        "intent": "GENERAL_QUERY",
+        "city": None,
+        "max_price": None
     }
