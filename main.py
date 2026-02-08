@@ -2,27 +2,26 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.chat import chat_router
-from core.config import GOOGLE_API_KEY, CORS_ORIGINS
+from core.config import CORS_ORIGINS, CORS_REGEX
 
+import os
 
-# -------------------------------------------------
-# FastAPI App Initialization
-# -------------------------------------------------
 
 app = FastAPI(
     title="Property Intelligence Engine",
-    description="Backend service for verified and unverified property intelligence",
-    version="1.0.0"
+    description="Backend service for verified property intelligence",
+    version="2.0.0"
 )
 
 
 # -------------------------------------------------
-# CORS Middleware (CRITICAL FOR FRONTEND)
+# CORS
 # -------------------------------------------------
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
+    allow_origin_regex=CORS_REGEX,
     allow_credentials=True,
     allow_methods=[
         "GET",
@@ -31,37 +30,33 @@ app.add_middleware(
         "PATCH",
         "DELETE",
         "OPTIONS"
-        
     ],
-    allow_headers=["*"],   # headers are fine with star
-    expose_headers=["*"],
+    allow_headers=["*"],
 )
 
+
 # -------------------------------------------------
-# Routes
+# ROUTES
 # -------------------------------------------------
 
 app.include_router(chat_router)
 
 
 # -------------------------------------------------
-# Health Check (Used by Load Balancers / DevOps)
+# HEALTH
 # -------------------------------------------------
 
 @app.get("/", tags=["Health"])
 def health_check():
-    return {
-        "status": "Backend is running successfully"
-    }
+    return {"status": "Backend running ✅"}
 
 
 # -------------------------------------------------
-# Internal AI Status (DO NOT EXPOSE PUBLICLY LATER)
+# INTERNAL (Hidden)
 # -------------------------------------------------
 
-@app.get("/internal/ai-status", tags=["Internal"])
+@app.get("/internal-ops/ai-status", tags=["Internal"])
 def ai_status():
     return {
-        "gemini_key_loaded": bool(GOOGLE_API_KEY)
+        "gemini_key_loaded": bool(os.getenv("GOOGLE_API_KEY"))
     }
-
