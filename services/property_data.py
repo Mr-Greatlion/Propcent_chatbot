@@ -1,23 +1,57 @@
 import json
-from pathlib import Path
 
-DATA_FILE = Path("data/properties.json")
+
+DATA_FILE = "data/properties.json"
+
+
+# -------------------------------------------------
+# LOAD ALL PROPERTIES
+# -------------------------------------------------
 
 def load_properties():
-    if not DATA_FILE.exists():
-        return []
-    with open(DATA_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
 
-def find_verified_properties(city=None, max_price=None):
+    try:
+        with open(DATA_FILE, "r") as f:
+            return json.load(f)
+
+    except Exception:
+        return []
+
+
+# -------------------------------------------------
+# FETCH FILTERED PROPERTIES
+# -------------------------------------------------
+
+def fetch_properties(city=None, max_price=None):
+
     properties = load_properties()
+
     results = []
 
-    for p in properties:
-        if city and city.lower() not in p["location"].lower():
-            continue
-        if max_price and p["price_value"] > max_price:
-            continue
-        results.append(p)
+    for prop in properties:
 
-    return results
+        # Filter by city
+        if city and prop.get("city", "").lower() != city.lower():
+            continue
+
+        # Filter by price
+        if max_price and prop.get("price", 0) > max_price:
+            continue
+
+        results.append(prop)
+
+    # No matches
+    if not results:
+        return None
+
+    # Format nicely for AI / user
+    formatted = []
+
+    for p in results:
+
+        formatted.append(
+            f"• {p.get('title')} — ₹{p.get('price'):,}\n"
+            f"Location: {p.get('location')}"
+        )
+
+    return "\n\n".join(formatted)
