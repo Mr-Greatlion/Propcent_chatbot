@@ -65,3 +65,4 @@ def generate_response(message: str) -> str:
     response = ai_refine(response)
 
     return response
+
