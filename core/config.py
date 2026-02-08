@@ -7,23 +7,19 @@ load_dotenv()
 # API Keys
 # -------------------------------------------------
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
+
 # -------------------------------------------------
-# CORS Configuration
+# CORS
 # -------------------------------------------------
-# Add ALL allowed frontend origins here
 
 CORS_ORIGINS = [
-    "http://localhost:3000",   # React default
+    "http://localhost:3000",
     "http://127.0.0.1:3000",
-    # Add production domain later:
     "https://chat.propcent.in",
-    "https://propcent.in"
-    
+    "https://propcent.in",
 ]
 
-
-
-
+# ⭐ FUTURE-PROOF (optional but recommended)
+CORS_REGEX = r"https://.*\.propcent\.in"
