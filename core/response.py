@@ -1,66 +1,67 @@
-from services.property_data import find_verified_properties
-from services.ai_engine import ai_refine
 from core.intent import detect_intent_and_filters
+from services.ai_engine import ask_gemini, ai_refine
+from services.property_data import fetch_properties
 
 
-def generate_response(message: str):
-    # 🔒 ALWAYS extract values first
-    data = detect_intent_and_filters(message)
+def generate_response(message: str) -> str:
 
-    intent = data.get("intent")
-    city = data.get("city")          # ✅ FIXED
-    max_price = data.get("max_price")  # ✅ FIXED
+    intent_data = detect_intent_and_filters(message)
+    intent = intent_data.get("intent")
 
-    # -------------------------------
+    # ---------------------------------
     # GREETING
-    # -------------------------------
+    # ---------------------------------
+
     if intent == "GREETING":
-        return (
-            "Hello! 👋\n\n"
-            "I can help you find verified properties and answer real-estate questions.\n\n"
-            "Try asking:\n"
-            "• Properties under 1 crore\n"
-            "• 2 BHK flats below 90 lakhs\n"
-            "• Area and unit conversions"
+        response = (
+            "Hello! 👋 I can help you find verified properties, "
+            "give investment guidance, and answer real estate questions."
         )
 
-    # -------------------------------
-    # UNIT CONVERSION
-    # -------------------------------
-    if intent == "UNIT_CONVERSION":
-        return (
-            "Here are common real-estate unit conversions:\n\n"
-            "• 1 square foot = 0.0929 square meters\n"
-            "• 1 cent = 435.6 square feet\n"
-            "• 1 acre = 43,560 square feet\n"
-            "• 1 square meter = 10.764 square feet\n\n"
-            "If you want a specific conversion, please tell me."
+    # ---------------------------------
+    # UNIT CONVERSION → AI handles better
+    # ---------------------------------
+
+    elif intent == "UNIT_CONVERSION":
+        response = ask_gemini(message)
+
+    # ---------------------------------
+    # PROPERTY SEARCH → DATABASE ONLY
+    # ---------------------------------
+
+    elif intent == "PROPERTY_QUERY":
+
+        properties = fetch_properties(
+            city=intent_data.get("city"),
+            max_price=intent_data.get("max_price")
         )
 
-    # -------------------------------
-    # PROPERTY SEARCH
-    # -------------------------------
-    verified = find_verified_properties(city, max_price)
-
-    if verified:
-        lines = ["Here are the verified properties matching your requirement:\n"]
-
-        for p in verified[:5]:
-            lines.append(
-                f"• {p['bhk']} BHK in {p['location']} – ₹{p['price']}"
+        if not properties:
+            response = (
+                "I couldn't find properties matching your criteria. "
+                "Try adjusting your budget or location."
             )
+        else:
+            response = properties
 
-        lines.append(
-            "\nThese listings are verified from our property database.\n"
-            "Would you like to refine this further by budget, location, or BHK?"
-        )
+    # ---------------------------------
+    # INVESTMENT + GENERAL → AI THINKS
+    # ---------------------------------
 
-        return ai_refine("\n".join(lines))
+    elif intent in ["INVESTMENT_ADVICE", "GENERAL_QUERY"]:
+        response = ask_gemini(message)
 
-    # -------------------------------
-    # SAFE FALLBACK
-    # -------------------------------
-    return (
-        "Currently, we do not have verified properties matching this request.\n\n"
-        "You can try a different budget, location, or ask about area conversions."
-    )
+    # ---------------------------------
+    # SAFETY FALLBACK
+    # ---------------------------------
+
+    else:
+        response = ask_gemini(message)
+
+    # ---------------------------------
+    # FINAL PROFESSIONAL POLISH
+    # ---------------------------------
+
+    response = ai_refine(response)
+
+    return response
