@@ -88,3 +88,4 @@ def detect_intent_and_filters(message: str):
         "city": None,
         "max_price": None
     }
+
