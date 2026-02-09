@@ -1,33 +1,50 @@
 from core.intent import detect_intent_and_filters
 from services.ai_engine import ask_gemini, ai_refine
-from services.property_data import fetch_properties
+from services.property_data import fetch_properties, get_property_count
 
 
 def generate_response(message: str) -> str:
 
+    # -------------------------------------------------
+    # Empty Guard (VERY IMPORTANT)
+    # -------------------------------------------------
+
+    if not message or len(message.strip()) == 0:
+        return "Please type your property requirement so I can assist you."
+
     intent_data = detect_intent_and_filters(message)
     intent = intent_data.get("intent")
 
-    # ---------------------------------
+    # -------------------------------------------------
     # GREETING
-    # ---------------------------------
+    # -------------------------------------------------
 
     if intent == "GREETING":
         return (
-            "Hello! 👋 I can help you find verified properties, "
-            "provide investment guidance, and answer real estate questions."
+            "Hello! 👋 I help you find verified properties, "
+            "investment opportunities, and real estate insights."
         )
 
-    # ---------------------------------
+    # -------------------------------------------------
+    # PROPERTY COUNT (DATABASE ONLY)
+    # -------------------------------------------------
+
+    if intent == "PROPERTY_COUNT":
+
+        count = get_property_count()
+
+        return f"We currently have {count} verified properties available."
+
+    # -------------------------------------------------
     # UNIT CONVERSION → AI GOOD HERE
-    # ---------------------------------
+    # -------------------------------------------------
 
     if intent == "UNIT_CONVERSION":
         return ask_gemini(message)
 
-    # ---------------------------------
-    # PROPERTY SEARCH → DATABASE ONLY
-    # ---------------------------------
+    # -------------------------------------------------
+    # PROPERTY SEARCH → STRICT DATABASE
+    # -------------------------------------------------
 
     if intent == "PROPERTY_QUERY":
 
@@ -39,10 +56,9 @@ def generate_response(message: str) -> str:
         if not properties:
             return (
                 "I couldn't find verified properties matching your criteria. "
-                "Try increasing your budget or changing the location."
+                "Try adjusting your budget or location."
             )
 
-        # ✅ FORMAT HERE (NOT in service)
         reply = "Here are some verified properties:\n\n"
 
         for p in properties[:5]:
@@ -50,22 +66,30 @@ def generate_response(message: str) -> str:
             price_lakh = p["price"] / 100000
 
             reply += (
-                f"• {p.get('title')} — ₹{price_lakh:.0f} Lakhs\n"
-                f"Location: {p.get('location')}\n\n"
+                f"🏡 {p.get('title')}\n"
+                f"📍 {p.get('location')}\n"
+                f"💰 ₹{price_lakh:.0f} Lakhs\n\n"
             )
 
-        # ✅ Only refine DATABASE responses
+        # ⭐ Tell user if more exist
+        if len(properties) > 5:
+            reply += f"👉 Showing 5 of {len(properties)} properties."
+
+        # ⭐ Only refine DB responses
         return ai_refine(reply)
 
-    # ---------------------------------
-    # AI KNOWLEDGE QUESTIONS
-    # ---------------------------------
+    # -------------------------------------------------
+    # AI KNOWLEDGE (SAFE ZONE)
+    # -------------------------------------------------
 
     if intent in ["INVESTMENT_ADVICE", "GENERAL_QUERY"]:
         return ask_gemini(message)
 
-    # ---------------------------------
-    # FALLBACK
-    # ---------------------------------
+    # -------------------------------------------------
+    # FINAL FALLBACK
+    # -------------------------------------------------
 
-    return ask_gemini(message)
+    return (
+        "I specialize in property-related queries. "
+        "Please ask about properties, budgets, locations, or investments."
+    )
