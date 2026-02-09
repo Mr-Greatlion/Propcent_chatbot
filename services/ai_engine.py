@@ -9,99 +9,116 @@ GEMINI_ENDPOINT = (
     f"{GEMINI_MODEL}:generateContent"
 )
 
-# ✅ Reuse TCP connection (FASTER)
+# ✅ Persistent TCP connection (VERY FAST)
 session = requests.Session()
 
 
 # -------------------------------------------------
-# SAFE GEMINI CALL
+# INTERNAL SAFE GEMINI CALL
 # -------------------------------------------------
 
-def _call_gemini(payload, timeout=15):
-
-    try:
-
-        res = session.post(
-            f"{GEMINI_ENDPOINT}?key={GOOGLE_API_KEY}",
-            json=payload,
-            timeout=timeout
-        )
-
-        if res.status_code != 200:
-            print("Gemini Error:", res.text)
-            return None
-
-        data = res.json()
-
-        # ✅ SAFE PARSE
-        return (
-            data.get("candidates", [{}])[0]
-                .get("content", {})
-                .get("parts", [{}])[0]
-                .get("text")
-        )
-
-    except Exception as e:
-        print("Gemini Exception:", str(e))
-        return None
-
-
-# -------------------------------------------------
-# AI THINKING
-# -------------------------------------------------
-
-def ask_gemini(prompt: str):
+def _call_gemini(payload, timeout=15, retries=2):
 
     if not GOOGLE_API_KEY:
-        return "AI service unavailable."
+        return None
+
+    url = f"{GEMINI_ENDPOINT}?key={GOOGLE_API_KEY}"
+
+    for attempt in range(retries):
+
+        try:
+            res = session.post(url, json=payload, timeout=timeout)
+
+            if res.status_code == 200:
+
+                data = res.json()
+
+                text = (
+                    data.get("candidates", [{}])[0]
+                        .get("content", {})
+                        .get("parts", [{}])[0]
+                        .get("text")
+                )
+
+                # ✅ Hallucination guard
+                if text and len(text.strip()) > 5:
+                    return text
+
+            else:
+                print("Gemini Error:", res.text)
+
+        except Exception as e:
+            print("Gemini Exception:", str(e))
+
+    return None
+
+
+# -------------------------------------------------
+# AI THINKING (Primary Brain)
+# -------------------------------------------------
+
+SYSTEM_PROMPT = """
+You are an expert real estate advisor in India.
+
+RULES:
+- Be practical and realistic.
+- Avoid generic AI phrases.
+- Do NOT say "As an AI".
+- Keep answers under 120 words.
+- Prefer bullet points when useful.
+"""
+
+
+def ask_gemini(user_prompt: str):
 
     payload = {
         "contents": [{
             "parts": [{
-                "text": (
-                    "You are a senior real estate advisor in India.\n"
-                    "Be practical. Avoid generic advice.\n"
-                    "Keep answers under 120 words.\n\n"
-                    f"User Question:\n{prompt}"
-                )
+                "text": SYSTEM_PROMPT + f"\n\nUser Question:\n{user_prompt}"
             }]
         }],
         "generationConfig": {
             "temperature": 0.35,
+            "topP": 0.9,
             "maxOutputTokens": 300
         }
     }
 
-    result = _call_gemini(payload)
+    result = _call_gemini(payload, timeout=18)
 
     if result:
         return result
 
-    return "AI service temporarily unavailable."
+    # ✅ Smart fallback (NEVER show scary errors)
+    return "I'm having trouble accessing AI insights right now. Please try again in a moment."
 
 
 # -------------------------------------------------
-# RESPONSE POLISH (ONLY FOR DATABASE TEXT)
+# RESPONSE POLISH
+# ONLY FOR PROPERTY DATABASE TEXT
 # -------------------------------------------------
+
+REFINE_PROMPT = """
+Rewrite this property listing professionally.
+
+STRICT RULES:
+- Do NOT add information.
+- Do NOT hallucinate amenities.
+- Keep it concise.
+- Make it sound premium but factual.
+"""
+
 
 def ai_refine(text: str):
 
-    # ✅ Use WORD COUNT, not char count
+    # Skip tiny responses
     if not text or len(text.split()) < 20:
-        return text
-
-    if not GOOGLE_API_KEY:
         return text
 
     payload = {
         "contents": [{
             "parts": [{
-                "text": (
-                    "Rewrite this property listing professionally.\n"
-                    "DO NOT add new information.\n"
-                    "Keep it concise.\n\n"
-                    + text
-                )
+                "text": REFINE_PROMPT + "\n\n" + text
             }]
         }],
         "generationConfig": {
