@@ -2,17 +2,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.chat import chat_router
-from core.config import CORS_ORIGINS, CORS_REGEX
-
-import os
+from core.config import CORS_ORIGINS, GOOGLE_API_KEY
 
 
 app = FastAPI(
-    title="Property Intelligence Engine",
-    description="Backend service for verified property intelligence",
-    version="2.0.0"
+    title="Propcent Property Intelligence Engine",
+    version="2.0",
+    description="Production Real Estate AI Backend"
 )
-
 
 # -------------------------------------------------
 # CORS
@@ -21,7 +18,6 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
-    allow_origin_regex=CORS_REGEX,
     allow_credentials=True,
     allow_methods=[
         "GET",
@@ -34,29 +30,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 # -------------------------------------------------
-# ROUTES
+# Routes
 # -------------------------------------------------
 
 app.include_router(chat_router)
 
-
 # -------------------------------------------------
-# HEALTH
-# -------------------------------------------------
-
-@app.get("/", tags=["Health"])
-def health_check():
-    return {"status": "Backend running ✅"}
-
-
-# -------------------------------------------------
-# INTERNAL (Hidden)
+# Health
 # -------------------------------------------------
 
-@app.get("/internal-ops/ai-status", tags=["Internal"])
+@app.get("/")
+def health():
+    return {"status": "Propcent AI running"}
+
+@app.get("/internal/ai-status")
 def ai_status():
-    return {
-        "gemini_key_loaded": bool(os.getenv("GOOGLE_API_KEY"))
-    }
+    return {"gemini_loaded": bool(GOOGLE_API_KEY)}
