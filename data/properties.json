@@ -1,14 +1,227 @@
 [
   {
-    "bhk": 3,
-    "location": "Velachery, Chennai",
-    "price": "95 Lakhs",
-    "price_value": 9500000
+    "title": "2BHK Apartment - OMR Tech Zone",
+    "city": "Chennai",
+    "location": "OMR, Sholinganallur",
+    "price": 7800000,
+    "bhk": 2,
+    "area_sqft": 1050,
+    "url": "https://propcent.in/p1"
   },
   {
+    "title": "3BHK Premium Flat",
+    "city": "Chennai",
+    "location": "Velachery",
+    "price": 11500000,
+    "bhk": 3,
+    "area_sqft": 1450,
+    "url": "https://propcent.in/p2"
+  },
+  {
+    "title": "2BHK Smart Home",
+    "city": "Chennai",
+    "location": "Medavakkam",
+    "price": 6900000,
     "bhk": 2,
-    "location": "Medavakkam, Chennai",
-    "price": "88 Lakhs",
-    "price_value": 8800000
+    "area_sqft": 980,
+    "url": "https://propcent.in/p3"
+  },
+  {
+    "title": "Luxury Villa Community",
+    "city": "Chennai",
+    "location": "ECR",
+    "price": 24000000,
+    "bhk": 4,
+    "area_sqft": 2600,
+    "url": "https://propcent.in/p4"
+  },
+  {
+    "title": "Affordable 1BHK Flat",
+    "city": "Chennai",
+    "location": "Tambaram",
+    "price": 3200000,
+    "bhk": 1,
+    "area_sqft": 550,
+    "url": "https://propcent.in/p5"
+  },
+  {
+    "title": "2BHK Gated Community",
+    "city": "Chennai",
+    "location": "Perumbakkam",
+    "price": 7200000,
+    "bhk": 2,
+    "area_sqft": 1020,
+    "url": "https://propcent.in/p6"
+  },
+  {
+    "title": "3BHK Lake View Apartment",
+    "city": "Chennai",
+    "location": "Porur",
+    "price": 9800000,
+    "bhk": 3,
+    "area_sqft": 1500,
+    "url": "https://propcent.in/p7"
+  },
+  {
+    "title": "Modern 2BHK Residence",
+    "city": "Chennai",
+    "location": "Pallikaranai",
+    "price": 7600000,
+    "bhk": 2,
+    "area_sqft": 1100,
+    "url": "https://propcent.in/p8"
+  },
+  {
+    "title": "Budget Friendly Apartment",
+    "city": "Chennai",
+    "location": "Guduvanchery",
+    "price": 4100000,
+    "bhk": 2,
+    "area_sqft": 900,
+    "url": "https://propcent.in/p9"
+  },
+  {
+    "title": "Executive 3BHK Flat",
+    "city": "Chennai",
+    "location": "Anna Nagar",
+    "price": 18500000,
+    "bhk": 3,
+    "area_sqft": 1700,
+    "url": "https://propcent.in/p10"
+  },
+  {
+    "title": "Compact 2BHK",
+    "city": "Chennai",
+    "location": "Chromepet",
+    "price": 5600000,
+    "bhk": 2,
+    "area_sqft": 850,
+    "url": "https://propcent.in/p11"
+  },
+  {
+    "title": "Premium Apartment Tower",
+    "city": "Chennai",
+    "location": "Thoraipakkam",
+    "price": 8900000,
+    "bhk": 2,
+    "area_sqft": 1200,
+    "url": "https://propcent.in/p12"
+  },
+  {
+    "title": "Family Friendly Flat",
+    "city": "Chennai",
+    "location": "Madipakkam",
+    "price": 6400000,
+    "bhk": 2,
+    "area_sqft": 1000,
+    "url": "https://propcent.in/p13"
+  },
+  {
+    "title": "Luxury Penthouse",
+    "city": "Chennai",
+    "location": "Adyar",
+    "price": 35000000,
+    "bhk": 4,
+    "area_sqft": 3000,
+    "url": "https://propcent.in/p14"
+  },
+  {
+    "title": "2BHK Metro Access Home",
+    "city": "Chennai",
+    "location": "Koyambedu",
+    "price": 8300000,
+    "bhk": 2,
+    "area_sqft": 1150,
+    "url": "https://propcent.in/p15"
+  },
+  {
+    "title": "Investment Plot",
+    "city": "Chennai",
+    "location": "Oragadam",
+    "price": 2500000,
+    "bhk": 0,
+    "area_sqft": 2400,
+    "url": "https://propcent.in/p16"
+  },
+  {
+    "title": "2BHK IT Corridor Flat",
+    "city": "Chennai",
+    "location": "Navalur",
+    "price": 7000000,
+    "bhk": 2,
+    "area_sqft": 1030,
+    "url": "https://propcent.in/p17"
+  },
+  {
+    "title": "3BHK Corner Apartment",
+    "city": "Chennai",
+    "location": "Ambattur",
+    "price": 8700000,
+    "bhk": 3,
+    "area_sqft": 1400,
+    "url": "https://propcent.in/p18"
+  },
+  {
+    "title": "Affordable Studio Apartment",
+    "city": "Chennai",
+    "location": "Avadi",
+    "price": 2800000,
+    "bhk": 1,
+    "area_sqft": 420,
+    "url": "https://propcent.in/p19"
+  },
+  {
+    "title": "2BHK Green Living Homes",
+    "city": "Chennai",
+    "location": "Siruseri",
+    "price": 7500000,
+    "bhk": 2,
+    "area_sqft": 1080,
+    "url": "https://propcent.in/p20"
+  },
+  {
+    "title": "Luxury Beachside Villa",
+    "city": "Chennai",
+    "location": "Injambakkam",
+    "price": 42000000,
+    "bhk": 5,
+    "area_sqft": 4200,
+    "url": "https://propcent.in/p21"
+  },
+  {
+    "title": "Modern Compact Flat",
+    "city": "Chennai",
+    "location": "Kolathur",
+    "price": 5200000,
+    "bhk": 2,
+    "area_sqft": 820,
+    "url": "https://propcent.in/p22"
+  },
+  {
+    "title": "3BHK Premium Residency",
+    "city": "Chennai",
+    "location": "Mogappair",
+    "price": 12500000,
+    "bhk": 3,
+    "area_sqft": 1600,
+    "url": "https://propcent.in/p23"
+  },
+  {
+    "title": "2BHK Family Apartment",
+    "city": "Chennai",
+    "location": "Tambaram East",
+    "price": 6100000,
+    "bhk": 2,
+    "area_sqft": 950,
+    "url": "https://propcent.in/p24"
+  },
+  {
+    "title": "Investment Ready Plot",
+    "city": "Chennai",
+    "location": "Chengalpattu",
+    "price": 1800000,
+    "bhk": 0,
+    "area_sqft": 1800,
+    "url": "https://propcent.in/p25"
   }
 ]
