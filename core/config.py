@@ -1,18 +1,12 @@
-import os
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
-# -------------------------------------------------
-# API Keys
-# -------------------------------------------------
-
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-
-# -------------------------------------------------
-# CORS
-# -------------------------------------------------
+if not GOOGLE_API_KEY:
+    raise ValueError("GOOGLE_API_KEY missing")
 
 CORS_ORIGINS = [
     "http://localhost:3000",
@@ -21,5 +15,4 @@ CORS_ORIGINS = [
     "https://propcent.in",
 ]
 
-# ⭐ FUTURE-PROOF (optional but recommended)
 CORS_REGEX = r"https://.*\.propcent\.in"
