@@ -1,12 +1,13 @@
 # =====================================================
-# PROPCENT CHAT API — V4 (PRODUCTION READY)
-# FastAPI Chat Endpoint
+# PROPCENT CHAT API — V4.5 (PRODUCTION READY)
+# FastAPI Chat Endpoint + Chat Logging
 # =====================================================
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from core.response import generate_response
+from services.chat_logger import save_chat
 
 
 # -------------------------------------------------
@@ -45,7 +46,7 @@ class ChatResponse(BaseModel):
 # -------------------------------------------------
 
 @chat_router.post("/", response_model=ChatResponse)
-def chat(payload: ChatRequest):
+def chat(payload: ChatRequest, request: Request):
 
     try:
         user_message = payload.message.strip()
@@ -56,19 +57,41 @@ def chat(payload: ChatRequest):
                 "reply": "Please enter a valid message."
             }
 
-        # Generate AI response
+        # ---------------------------------------------
+        # GENERATE RESPONSE
+        # ---------------------------------------------
+
         reply = generate_response(user_message)
 
-        # Final safety fallback
         if not reply:
             reply = (
                 "I'm unable to respond right now. "
                 "Please try again shortly."
             )
 
+        # ---------------------------------------------
+        # CAPTURE USER IP
+        # ---------------------------------------------
+
+        ip_address = request.client.host
+
+        # ---------------------------------------------
+        # STORE CHAT LOG
+        # ---------------------------------------------
+
+        try:
+            save_chat(ip_address, user_message, reply)
+        except Exception as log_error:
+            print("CHAT LOG ERROR:", log_error)
+
+        # ---------------------------------------------
+        # RETURN RESPONSE
+        # ---------------------------------------------
+
         return {"reply": reply}
 
     except Exception as e:
+
         # Never expose internal errors to users
         print("CHAT API ERROR:", str(e))
 
