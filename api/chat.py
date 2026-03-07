@@ -7,6 +7,7 @@ from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 from typing import Optional
 import psycopg2
+import uuid
 
 from core.response import generate_response
 from services.chat_logger import save_chat
@@ -53,19 +54,21 @@ def create_chat_session(ip_address):
     try:
 
         conn = get_db_connection()
-
         if not conn:
             return None
 
         cursor = conn.cursor()
 
+        session_uuid = str(uuid.uuid4())
+
         cursor.execute(
             """
-            INSERT INTO "ChatSession" ("ipAddress")
-            VALUES (%s)
+            INSERT INTO "ChatSession"
+            ("ipAddress","sessionId","createdAt","updatedAt")
+            VALUES (%s,%s,NOW(),NOW())
             RETURNING id
             """,
-            (ip_address,)
+            (ip_address, session_uuid)
         )
 
         session_id = cursor.fetchone()[0]
@@ -100,7 +103,6 @@ def save_chat_message(session_id, role, content):
     try:
 
         conn = get_db_connection()
-
         if not conn:
             return
 
@@ -109,8 +111,8 @@ def save_chat_message(session_id, role, content):
         cursor.execute(
             """
             INSERT INTO "ChatMessage"
-            ("chatSessionId", "role", "content")
-            VALUES (%s, %s, %s)
+            ("chatSessionId","role","content","createdAt")
+            VALUES (%s,%s,%s,NOW())
             """,
             (session_id, role, content)
         )
@@ -182,16 +184,10 @@ def chat(payload: ChatRequest, request: Request):
                 "sessionId": payload.sessionId or 0
             }
 
-        # ------------------------------
         # GET USER IP
-        # ------------------------------
-
         ip_address = request.client.host
 
-        # ------------------------------
         # CREATE OR USE SESSION
-        # ------------------------------
-
         session_id = payload.sessionId
 
         if not session_id:
@@ -201,41 +197,25 @@ def chat(payload: ChatRequest, request: Request):
             print("⚠️ SESSION CREATION FAILED")
             session_id = 0
 
-        # ------------------------------
         # SAVE USER MESSAGE
-        # ------------------------------
-
         if session_id:
             save_chat_message(session_id, "USER", user_message)
 
-        # ------------------------------
         # GENERATE AI RESPONSE
-        # ------------------------------
-
         reply = generate_response(user_message)
 
         if not reply:
             reply = "I'm unable to respond right now. Please try again shortly."
 
-        # ------------------------------
-        # SAVE AI MESSAGE
-        # ------------------------------
-
+        # SAVE ASSISTANT MESSAGE
         if session_id:
             save_chat_message(session_id, "ASSISTANT", reply)
 
-        # ------------------------------
         # SAVE LOCAL JSON BACKUP
-        # ------------------------------
-
         try:
             save_chat(ip_address, user_message, reply)
         except Exception as e:
             print("⚠️ LOCAL JSON LOG ERROR:", e)
-
-        # ------------------------------
-        # RETURN RESPONSE
-        # ------------------------------
 
         return {
             "reply": reply,
