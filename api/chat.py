@@ -1,5 +1,5 @@
 # =====================================================
-# PROPCENT CHAT API — FINAL STABLE VERSION
+# PROPCENT CHAT API — FINAL PRODUCTION VERSION
 # PostgreSQL + Local JSON Chat Logging
 # =====================================================
 
@@ -23,18 +23,21 @@ DB_PASS = "qmDTdDvImAGsfRg"
 DB_PORT = "5432"
 
 
+# -------------------------------------------------
+# GET DATABASE CONNECTION
+# -------------------------------------------------
+
 def get_db_connection():
     try:
-        conn = psycopg2.connect(
+        return psycopg2.connect(
             host=DB_HOST,
             database=DB_NAME,
             user=DB_USER,
             password=DB_PASS,
             port=DB_PORT
         )
-        return conn
     except Exception as e:
-        print("DATABASE CONNECTION ERROR:", e)
+        print("❌ DATABASE CONNECTION ERROR:", e)
         return None
 
 
@@ -42,13 +45,18 @@ def get_db_connection():
 # CREATE CHAT SESSION
 # -------------------------------------------------
 
-def create_chat_session(ip_address: str):
+def create_chat_session(ip_address):
 
-    conn = get_db_connection()
-    if not conn:
-        return None
+    conn = None
+    cursor = None
 
     try:
+
+        conn = get_db_connection()
+
+        if not conn:
+            return None
+
         cursor = conn.cursor()
 
         cursor.execute(
@@ -64,28 +72,38 @@ def create_chat_session(ip_address: str):
 
         conn.commit()
 
-        cursor.close()
-        conn.close()
-
         return session_id
 
     except Exception as e:
-        print("SESSION CREATE ERROR:", e)
-        conn.close()
+
+        print("❌ SESSION CREATE ERROR:", e)
         return None
+
+    finally:
+
+        if cursor:
+            cursor.close()
+
+        if conn:
+            conn.close()
 
 
 # -------------------------------------------------
 # SAVE CHAT MESSAGE
 # -------------------------------------------------
 
-def save_chat_message(session_id: int, role: str, content: str):
+def save_chat_message(session_id, role, content):
 
-    conn = get_db_connection()
-    if not conn:
-        return
+    conn = None
+    cursor = None
 
     try:
+
+        conn = get_db_connection()
+
+        if not conn:
+            return
+
         cursor = conn.cursor()
 
         cursor.execute(
@@ -99,12 +117,17 @@ def save_chat_message(session_id: int, role: str, content: str):
 
         conn.commit()
 
-        cursor.close()
-        conn.close()
-
     except Exception as e:
-        print("CHAT MESSAGE SAVE ERROR:", e)
-        conn.close()
+
+        print("❌ CHAT MESSAGE SAVE ERROR:", e)
+
+    finally:
+
+        if cursor:
+            cursor.close()
+
+        if conn:
+            conn.close()
 
 
 # -------------------------------------------------
@@ -126,8 +149,7 @@ class ChatRequest(BaseModel):
     message: str = Field(
         ...,
         min_length=1,
-        max_length=1000,
-        description="User chat message"
+        max_length=1000
     )
 
     sessionId: Optional[int] = None
@@ -160,15 +182,15 @@ def chat(payload: ChatRequest, request: Request):
                 "sessionId": payload.sessionId or 0
             }
 
-        # -----------------------------------------
+        # ------------------------------
         # GET USER IP
-        # -----------------------------------------
+        # ------------------------------
 
         ip_address = request.client.host
 
-        # -----------------------------------------
+        # ------------------------------
         # CREATE OR USE SESSION
-        # -----------------------------------------
+        # ------------------------------
 
         session_id = payload.sessionId
 
@@ -176,50 +198,44 @@ def chat(payload: ChatRequest, request: Request):
             session_id = create_chat_session(ip_address)
 
         if not session_id:
-            print("Failed to create chat session")
+            print("⚠️ SESSION CREATION FAILED")
             session_id = 0
 
-        # -----------------------------------------
-        # SAVE USER MESSAGE TO DATABASE
-        # -----------------------------------------
+        # ------------------------------
+        # SAVE USER MESSAGE
+        # ------------------------------
 
-        try:
-            if session_id:
-                save_chat_message(session_id, "USER", user_message)
-        except Exception as e:
-            print("USER MESSAGE ERROR:", e)
+        if session_id:
+            save_chat_message(session_id, "USER", user_message)
 
-        # -----------------------------------------
+        # ------------------------------
         # GENERATE AI RESPONSE
-        # -----------------------------------------
+        # ------------------------------
 
         reply = generate_response(user_message)
 
         if not reply:
             reply = "I'm unable to respond right now. Please try again shortly."
 
-        # -----------------------------------------
-        # SAVE AI MESSAGE TO DATABASE
-        # -----------------------------------------
+        # ------------------------------
+        # SAVE AI MESSAGE
+        # ------------------------------
 
-        try:
-            if session_id:
-                save_chat_message(session_id, "ASSISTANT", reply)
-        except Exception as e:
-            print("ASSISTANT MESSAGE ERROR:", e)
+        if session_id:
+            save_chat_message(session_id, "ASSISTANT", reply)
 
-        # -----------------------------------------
+        # ------------------------------
         # SAVE LOCAL JSON BACKUP
-        # -----------------------------------------
+        # ------------------------------
 
         try:
             save_chat(ip_address, user_message, reply)
         except Exception as e:
-            print("LOCAL LOG ERROR:", e)
+            print("⚠️ LOCAL JSON LOG ERROR:", e)
 
-        # -----------------------------------------
+        # ------------------------------
         # RETURN RESPONSE
-        # -----------------------------------------
+        # ------------------------------
 
         return {
             "reply": reply,
@@ -228,7 +244,7 @@ def chat(payload: ChatRequest, request: Request):
 
     except Exception as e:
 
-        print("CHAT API ERROR:", e)
+        print("❌ CHAT API ERROR:", e)
 
         raise HTTPException(
             status_code=500,
