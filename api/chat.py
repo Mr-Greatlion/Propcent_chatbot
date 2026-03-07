@@ -111,8 +111,8 @@ def save_chat_message(session_id, role, content):
         cursor.execute(
             """
             INSERT INTO "ChatMessage"
-            ("chatSessionId","role","content","createdAt")
-            VALUES (%s,%s,%s,NOW())
+            ("chatSessionId","role","content","createdAt","updatedAt")
+            VALUES (%s,%s,%s,NOW(),NOW())
             """,
             (session_id, role, content)
         )
