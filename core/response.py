@@ -1,6 +1,6 @@
 # =====================================================
-# PROPCENT RESPONSE ENGINE — V6 (FULL PRODUCTION READY)
-# Clean • Detailed • No Errors • UI Ready
+# PROPCENT RESPONSE ENGINE — V7 (STRUCTURED API READY)
+# UI Friendly • Stable • Production Safe
 # =====================================================
 
 from core.intent import detect_intent_and_filters
@@ -12,37 +12,10 @@ from services.property_data import (
 
 
 # -------------------------------------------------
-# SAFE FORMATTER FOR PROPERTY DISPLAY
+# MAIN RESPONSE GENERATOR (STRUCTURED OUTPUT)
 # -------------------------------------------------
 
-def format_property(p: dict) -> str:
-
-    try:
-        price = p.get("price", 0)
-        price_lakh = price / 100000 if price else 0
-
-        return (
-            f"🏡 {p.get('title', 'Property')}\n"
-            f"📍 Location: {p.get('location', 'N/A')}\n"
-            f"🏢 Builder: {p.get('builder', 'N/A')}\n"
-            f"📐 Area: {p.get('area_sqft', 'N/A')} sqft\n"
-            f"🛏 BHK: {p.get('bhk', 'N/A')}\n"
-            f"💰 Price: ₹{price_lakh:.0f} Lakhs\n"
-            f"📅 Possession: {p.get('possession', 'N/A')}\n"
-            f"🔗 {p.get('url', '')}\n"
-            f"────────────────────────\n"
-        )
-
-    except Exception as e:
-        print("FORMAT ERROR:", e)
-        return "⚠️ Error displaying property\n"
-
-
-# -------------------------------------------------
-# MAIN RESPONSE GENERATOR
-# -------------------------------------------------
-
-def generate_response(message: str) -> str:
+def generate_response(message: str) -> dict:
 
     try:
 
@@ -51,7 +24,10 @@ def generate_response(message: str) -> str:
         # -------------------------------------------------
 
         if not message or not message.strip():
-            return "Please type your property requirement so I can assist you."
+            return {
+                "reply": "Please type your property requirement so I can assist you.",
+                "replyType": "text"
+            }
 
         intent_data = detect_intent_and_filters(message)
         intent = intent_data.get("intent")
@@ -61,15 +37,18 @@ def generate_response(message: str) -> str:
         # -------------------------------------------------
 
         if intent == "GREETING":
-            return (
-                "Hello! 👋 I help you find verified properties, "
-                "investment opportunities, and real estate insights.\n\n"
-                "Try asking:\n"
-                "• 2BHK below 1 crore in Chennai\n"
-                "• Villa in ECR\n"
-                "• Property in OMR\n"
-                "• Best investment areas"
-            )
+            return {
+                "reply": (
+                    "Hello! 👋 I help you find verified properties, "
+                    "investment opportunities, and real estate insights.\n\n"
+                    "Try asking:\n"
+                    "• 2BHK below 1 crore in Chennai\n"
+                    "• Villa in ECR\n"
+                    "• Property in OMR\n"
+                    "• Best investment areas"
+                ),
+                "replyType": "text"
+            }
 
         # -------------------------------------------------
         # PROPERTY COUNT
@@ -81,19 +60,28 @@ def generate_response(message: str) -> str:
             count = get_property_count(city)
 
             if city:
-                return f"📊 We currently have {count} verified properties in {city}."
+                return {
+                    "reply": f"📊 We currently have {count} verified properties in {city}.",
+                    "replyType": "text"
+                }
 
-            return f"📊 We currently have {count} verified properties available."
+            return {
+                "reply": f"📊 We currently have {count} verified properties available.",
+                "replyType": "text"
+            }
 
         # -------------------------------------------------
         # UNIT CONVERSION
         # -------------------------------------------------
 
         if intent == "UNIT_CONVERSION":
-            return ask_gemini(message)
+            return {
+                "reply": ask_gemini(message),
+                "replyType": "text"
+            }
 
         # -------------------------------------------------
-        # PROPERTY SEARCH
+        # PROPERTY SEARCH (MAIN FEATURE)
         # -------------------------------------------------
 
         if intent == "PROPERTY_QUERY":
@@ -111,18 +99,28 @@ def generate_response(message: str) -> str:
 
             if properties:
 
-                reply = "🏘️ Here are verified properties matching your requirement:\n\n"
-
-                for p in properties[:5]:
-                    reply += format_property(p)
-
-                if len(properties) > 5:
-                    reply += f"\n👉 Showing 5 of {len(properties)} properties."
-
-                return reply
+                return {
+                    "reply": "Here are verified properties matching your requirement",
+                    "replyType": "property_list",
+                    "properties": [
+                        {
+                            "title": p.get("title"),
+                            "location": p.get("location"),
+                            "builder": p.get("builder"),
+                            "area_sqft": p.get("area_sqft"),
+                            "bhk": p.get("bhk"),
+                            "price_in_lakhs": int(p.get("price", 0) / 100000),
+                            "possession": p.get("possession"),
+                            "url": p.get("url")
+                        }
+                        for p in properties[:5]
+                    ],
+                    "totalShown": min(5, len(properties)),
+                    "totalAvailable": len(properties)
+                }
 
             # ---------------------------------------------
-            # SMART FALLBACK
+            # FALLBACK (SIMILAR PROPERTIES)
             # ---------------------------------------------
 
             alternative_props = fetch_properties(
@@ -132,42 +130,55 @@ def generate_response(message: str) -> str:
 
             if alternative_props:
 
-                reply = (
-                    "⚠️ No exact match found in that location.\n\n"
-                    "Here are similar properties within your budget:\n\n"
-                )
+                return {
+                    "reply": "No exact match found. Here are similar properties within your budget",
+                    "replyType": "property_list",
+                    "properties": [
+                        {
+                            "title": p.get("title"),
+                            "location": p.get("location"),
+                            "builder": p.get("builder"),
+                            "area_sqft": p.get("area_sqft"),
+                            "bhk": p.get("bhk"),
+                            "price_in_lakhs": int(p.get("price", 0) / 100000),
+                            "possession": p.get("possession"),
+                            "url": p.get("url")
+                        }
+                        for p in alternative_props[:3]
+                    ],
+                    "totalShown": min(3, len(alternative_props)),
+                    "totalAvailable": len(alternative_props)
+                }
 
-                for p in alternative_props[:3]:
-                    reply += format_property(p)
-
-                return reply
-
-            return (
-                "❌ Sorry, I couldn't find matching properties.\n"
-                "Try changing location, budget, or BHK."
-            )
+            return {
+                "reply": "Sorry, I couldn't find matching properties. Try changing location, budget, or BHK.",
+                "replyType": "text"
+            }
 
         # -------------------------------------------------
         # INVESTMENT / GENERAL AI
         # -------------------------------------------------
 
         if intent in ["INVESTMENT_ADVICE", "GENERAL_QUERY"]:
-            return ask_gemini(message)
+            return {
+                "reply": ask_gemini(message),
+                "replyType": "text"
+            }
 
         # -------------------------------------------------
         # FINAL FALLBACK
         # -------------------------------------------------
 
-        return (
-            "I specialize in property-related queries.\n"
-            "Ask about properties, locations, budget, or investment advice."
-        )
+        return {
+            "reply": "I specialize in property-related queries. Ask about properties, locations, budget, or investment advice.",
+            "replyType": "text"
+        }
 
     except Exception as e:
 
         print("❌ RESPONSE ENGINE ERROR:", e)
 
-        return (
-            "⚠️ Something went wrong while processing your request.\n"
-            "Please try again."
-        )
+        return {
+            "reply": "Something went wrong while processing your request. Please try again.",
+            "replyType": "text"
+        }
