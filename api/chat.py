@@ -1,11 +1,11 @@
 # =====================================================
-# PROPCENT CHAT API — FINAL PRODUCTION VERSION
-# PostgreSQL + Local JSON Chat Logging
+# PROPCENT CHAT API — V7 (STRUCTURED RESPONSE READY)
+# PostgreSQL + JSON Backup + UI Ready
 # =====================================================
 
 from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, List, Dict, Any
 import psycopg2
 import uuid
 
@@ -14,7 +14,7 @@ from services.chat_logger import save_chat
 
 
 # -------------------------------------------------
-# DATABASE CONFIG
+# DATABASE CONFIG (⚠️ MOVE TO ENV IN PRODUCTION)
 # -------------------------------------------------
 
 DB_HOST = "localhost"
@@ -25,7 +25,7 @@ DB_PORT = "5432"
 
 
 # -------------------------------------------------
-# GET DATABASE CONNECTION
+# DB CONNECTION
 # -------------------------------------------------
 
 def get_db_connection():
@@ -52,7 +52,6 @@ def create_chat_session(ip_address):
     cursor = None
 
     try:
-
         conn = get_db_connection()
         if not conn:
             return None
@@ -72,21 +71,17 @@ def create_chat_session(ip_address):
         )
 
         session_id = cursor.fetchone()[0]
-
         conn.commit()
 
         return session_id
 
     except Exception as e:
-
         print("❌ SESSION CREATE ERROR:", e)
         return None
 
     finally:
-
         if cursor:
             cursor.close()
-
         if conn:
             conn.close()
 
@@ -101,7 +96,6 @@ def save_chat_message(session_id, role, content):
     cursor = None
 
     try:
-
         conn = get_db_connection()
         if not conn:
             return
@@ -120,20 +114,17 @@ def save_chat_message(session_id, role, content):
         conn.commit()
 
     except Exception as e:
-
         print("❌ CHAT MESSAGE SAVE ERROR:", e)
 
     finally:
-
         if cursor:
             cursor.close()
-
         if conn:
             conn.close()
 
 
 # -------------------------------------------------
-# ROUTER CONFIG
+# ROUTER
 # -------------------------------------------------
 
 chat_router = APIRouter(
@@ -147,23 +138,20 @@ chat_router = APIRouter(
 # -------------------------------------------------
 
 class ChatRequest(BaseModel):
-
-    message: str = Field(
-        ...,
-        min_length=1,
-        max_length=1000
-    )
-
+    message: str = Field(..., min_length=1, max_length=1000)
     sessionId: Optional[int] = None
 
 
 # -------------------------------------------------
-# RESPONSE MODEL
+# RESPONSE MODEL (UPDATED)
 # -------------------------------------------------
 
 class ChatResponse(BaseModel):
-
     reply: str
+    replyType: str
+    properties: Optional[List[Dict[str, Any]]] = []
+    totalShown: Optional[int] = 0
+    totalAvailable: Optional[int] = 0
     sessionId: int
 
 
@@ -181,13 +169,23 @@ def chat(payload: ChatRequest, request: Request):
         if not user_message:
             return {
                 "reply": "Please enter a valid message.",
+                "replyType": "text",
+                "properties": [],
+                "totalShown": 0,
+                "totalAvailable": 0,
                 "sessionId": payload.sessionId or 0
             }
 
-        # GET USER IP
+        # -------------------------------------------------
+        # USER IP
+        # -------------------------------------------------
+
         ip_address = request.client.host
 
-        # CREATE OR USE SESSION
+        # -------------------------------------------------
+        # SESSION HANDLING
+        # -------------------------------------------------
+
         session_id = payload.sessionId
 
         if not session_id:
@@ -197,28 +195,55 @@ def chat(payload: ChatRequest, request: Request):
             print("⚠️ SESSION CREATION FAILED")
             session_id = 0
 
+        # -------------------------------------------------
         # SAVE USER MESSAGE
+        # -------------------------------------------------
+
         if session_id:
             save_chat_message(session_id, "USER", user_message)
 
-        # GENERATE AI RESPONSE
-        reply = generate_response(user_message)
+        # -------------------------------------------------
+        # GENERATE RESPONSE (NEW STRUCTURE)
+        # -------------------------------------------------
+
+        response_data = generate_response(user_message)
+
+        reply = response_data.get("reply", "")
+        reply_type = response_data.get("replyType", "text")
+        properties = response_data.get("properties", [])
+        total_shown = response_data.get("totalShown", 0)
+        total_available = response_data.get("totalAvailable", 0)
 
         if not reply:
             reply = "I'm unable to respond right now. Please try again shortly."
+            reply_type = "text"
 
-        # SAVE ASSISTANT MESSAGE
+        # -------------------------------------------------
+        # SAVE ASSISTANT MESSAGE (ONLY TEXT)
+        # -------------------------------------------------
+
         if session_id:
             save_chat_message(session_id, "ASSISTANT", reply)
 
-        # SAVE LOCAL JSON BACKUP
+        # -------------------------------------------------
+        # LOCAL JSON BACKUP
+        # -------------------------------------------------
+
         try:
             save_chat(ip_address, user_message, reply)
         except Exception as e:
             print("⚠️ LOCAL JSON LOG ERROR:", e)
 
+        # -------------------------------------------------
+        # FINAL RESPONSE (FRONTEND READY)
+        # -------------------------------------------------
+
         return {
             "reply": reply,
+            "replyType": reply_type,
+            "properties": properties,
+            "totalShown": total_shown,
+            "totalAvailable": total_available,
             "sessionId": session_id
         }
 
