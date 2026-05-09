@@ -8,7 +8,7 @@
     "location": "OMR, Sholinganallur",
     "full_address": "OMR, Sholinganallur",
     "price_start": 7800000,
-    "price_text": "₹7,800,000",
+    "price_in_lakhs": "₹7,800,000",
     "configurations": [
       "2BHK"
     ],
@@ -36,7 +36,7 @@
     "location": "Velachery",
     "full_address": "Velachery",
     "price_start": 11500000,
-    "price_text": "₹11,500,000",
+    "price_in_lakhs": "₹11,500,000",
     "configurations": [
       "3BHK"
     ],
@@ -64,7 +64,7 @@
     "location": "Medavakkam",
     "full_address": "Medavakkam",
     "price_start": 6900000,
-    "price_text": "₹6,900,000",
+    "price_in_lakhs": "₹6,900,000",
     "configurations": [
       "2BHK"
     ],
@@ -92,7 +92,7 @@
     "location": "ECR",
     "full_address": "ECR",
     "price_start": 24000000,
-    "price_text": "₹24,000,000",
+    "price_in_lakhs": "₹24,000,000",
     "configurations": [
       "4BHK"
     ],
@@ -120,7 +120,7 @@
     "location": "Tambaram",
     "full_address": "Tambaram",
     "price_start": 3200000,
-    "price_text": "₹3,200,000",
+    "price_in_lakhs": "₹3,200,000",
     "configurations": [
       "1BHK"
     ],
@@ -148,7 +148,7 @@
     "location": "Perumbakkam",
     "full_address": "Perumbakkam",
     "price_start": 7200000,
-    "price_text": "₹7,200,000",
+    "price_in_lakhs": "₹7,200,000",
     "configurations": [
       "2BHK"
     ],
@@ -176,7 +176,7 @@
     "location": "Porur",
     "full_address": "Porur",
     "price_start": 9800000,
-    "price_text": "₹9,800,000",
+    "price_in_lakhs": "₹9,800,000",
     "configurations": [
       "3BHK"
     ],
@@ -204,7 +204,7 @@
     "location": "Pallikaranai",
     "full_address": "Pallikaranai",
     "price_start": 7600000,
-    "price_text": "₹7,600,000",
+    "price_in_lakhs": "₹7,600,000",
     "configurations": [
       "2BHK"
     ],
@@ -232,7 +232,7 @@
     "location": "Guduvanchery",
     "full_address": "Guduvanchery",
     "price_start": 4100000,
-    "price_text": "₹4,100,000",
+    "price_in_lakhs": "₹4,100,000",
     "configurations": [
       "2BHK"
     ],
@@ -260,7 +260,7 @@
     "location": "Anna Nagar",
     "full_address": "Anna Nagar",
     "price_start": 18500000,
-    "price_text": "₹18,500,000",
+    "price_in_lakhs": "₹18,500,000",
     "configurations": [
       "3BHK"
     ],
@@ -288,7 +288,7 @@
     "location": "Chromepet",
     "full_address": "Chromepet",
     "price_start": 5600000,
-    "price_text": "₹5,600,000",
+    "price_in_lakhs": "₹5,600,000",
     "configurations": [
       "2BHK"
     ],
@@ -316,7 +316,7 @@
     "location": "Thoraipakkam",
     "full_address": "Thoraipakkam",
     "price_start": 8900000,
-    "price_text": "₹8,900,000",
+    "price_in_lakhs": "₹8,900,000",
     "configurations": [
       "2BHK"
     ],
@@ -344,7 +344,7 @@
     "location": "Madipakkam",
     "full_address": "Madipakkam",
     "price_start": 6400000,
-    "price_text": "₹6,400,000",
+    "price_in_lakhs": "₹6,400,000",
     "configurations": [
       "2BHK"
     ],
@@ -372,7 +372,7 @@
     "location": "Adyar",
     "full_address": "Adyar",
     "price_start": 35000000,
-    "price_text": "₹35,000,000",
+    "price_in_lakhs": "₹35,000,000",
     "configurations": [
       "4BHK"
     ],
@@ -400,7 +400,7 @@
     "location": "Koyambedu",
     "full_address": "Koyambedu",
     "price_start": 8300000,
-    "price_text": "₹8,300,000",
+    "price_in_lakhs": "₹8,300,000",
     "configurations": [
       "2BHK"
     ],
@@ -428,7 +428,7 @@
     "location": "Oragadam",
     "full_address": "Oragadam",
     "price_start": 2500000,
-    "price_text": "₹2,500,000",
+    "price_in_lakhs": "₹2,500,000",
     "configurations": [
       "Plot"
     ],
@@ -456,7 +456,7 @@
     "location": "Navalur",
     "full_address": "Navalur",
     "price_start": 7000000,
-    "price_text": "₹7,000,000",
+    "price_in_lakhs": "₹7,000,000",
     "configurations": [
       "2BHK"
     ],
@@ -484,7 +484,7 @@
     "location": "Ambattur",
     "full_address": "Ambattur",
     "price_start": 8700000,
-    "price_text": "₹8,700,000",
+    "price_in_lakhs": "₹8,700,000",
     "configurations": [
       "3BHK"
     ],
@@ -512,7 +512,7 @@
     "location": "Avadi",
     "full_address": "Avadi",
     "price_start": 2800000,
-    "price_text": "₹2,800,000",
+    "price_in_lakhs": "₹2,800,000",
     "configurations": [
       "1BHK"
     ],
@@ -540,7 +540,7 @@
     "location": "Siruseri",
     "full_address": "Siruseri",
     "price_start": 7500000,
-    "price_text": "₹7,500,000",
+    "price_in_lakhs": "₹7,500,000",
     "configurations": [
       "2BHK"
     ],
@@ -568,7 +568,7 @@
     "location": "Injambakkam",
     "full_address": "Injambakkam",
     "price_start": 42000000,
-    "price_text": "₹42,000,000",
+    "price_in_lakhs": "₹42,000,000",
     "configurations": [
       "5BHK"
     ],
@@ -596,7 +596,7 @@
     "location": "Kolathur",
     "full_address": "Kolathur",
     "price_start": 5200000,
-    "price_text": "₹5,200,000",
+    "price_in_lakhs": "₹5,200,000",
     "configurations": [
       "2BHK"
     ],
@@ -624,7 +624,7 @@
     "location": "Mogappair",
     "full_address": "Mogappair",
     "price_start": 12500000,
-    "price_text": "₹12,500,000",
+    "price_in_lakhs": "₹12,500,000",
     "configurations": [
       "3BHK"
     ],
@@ -652,7 +652,7 @@
     "location": "Tambaram East",
     "full_address": "Tambaram East",
     "price_start": 6100000,
-    "price_text": "₹6,100,000",
+    "price_in_lakhs": "₹6,100,000",
     "configurations": [
       "2BHK"
     ],
@@ -680,7 +680,7 @@
     "location": "Chengalpattu",
     "full_address": "Chengalpattu",
     "price_start": 1800000,
-    "price_text": "₹1,800,000",
+    "price_in_lakhs": "₹1,800,000",
     "configurations": [
       "Plot"
     ],
@@ -708,7 +708,7 @@
     "location": "INR1.89 Cr. onwards",
     "full_address": "INR1.89 Cr. onwards",
     "price_start": 18900000,
-    "price_text": "INR1.89 Cr. onwards",
+    "price_in_lakhs": "INR1.89 Cr. onwards",
     "configurations": [
       "2BHK",
       "3.5BHK",
@@ -745,7 +745,7 @@
     "location": "INR2.99 Cr. onwards",
     "full_address": "INR2.99 Cr. onwards",
     "price_start": 29900000,
-    "price_text": "INR2.99 Cr. onwards",
+    "price_in_lakhs": "INR2.99 Cr. onwards",
     "configurations": [
       "3BHK"
     ],
@@ -777,7 +777,7 @@
     "location": "INR3.47 Cr. onwards",
     "full_address": "INR3.47 Cr. onwards",
     "price_start": 34700000,
-    "price_text": "INR3.47 Cr. onwards",
+    "price_in_lakhs": "INR3.47 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -813,7 +813,7 @@
     "location": "INR10.26 Cr. onwards",
     "full_address": "INR10.26 Cr. onwards",
     "price_start": 102600000,
-    "price_text": "INR10.26 Cr. onwards",
+    "price_in_lakhs": "INR10.26 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -848,7 +848,7 @@
     "location": "INR4.91 Cr. onwards",
     "full_address": "INR4.91 Cr. onwards",
     "price_start": 49100000,
-    "price_text": "INR4.91 Cr. onwards",
+    "price_in_lakhs": "INR4.91 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -882,7 +882,7 @@
     "location": "INR35.00 Cr. onwards",
     "full_address": "INR35.00 Cr. onwards",
     "price_start": 350000000,
-    "price_text": "INR35.00 Cr. onwards",
+    "price_in_lakhs": "INR35.00 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK",
@@ -917,7 +917,7 @@
     "location": "INR2.90 Cr. onwards",
     "full_address": "INR2.90 Cr. onwards",
     "price_start": 29000000,
-    "price_text": "INR2.90 Cr. onwards",
+    "price_in_lakhs": "INR2.90 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -953,7 +953,7 @@
     "location": "INR92.77 Lakh onwards",
     "full_address": "INR92.77 Lakh onwards",
     "price_start": 9277000,
-    "price_text": "INR92.77 Lakh onwards",
+    "price_in_lakhs": "INR92.77 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -991,7 +991,7 @@
     "location": "INR2.90 Cr. onwards",
     "full_address": "INR2.90 Cr. onwards",
     "price_start": 29000000,
-    "price_text": "INR2.90 Cr. onwards",
+    "price_in_lakhs": "INR2.90 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -1028,7 +1028,7 @@
     "location": "INR2.15 Cr. onwards",
     "full_address": "INR2.15 Cr. onwards",
     "price_start": 21500000,
-    "price_text": "INR2.15 Cr. onwards",
+    "price_in_lakhs": "INR2.15 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1061,7 +1061,7 @@
     "location": "Price\n\nAvailable on Request",
     "full_address": "Price\n\nAvailable on Request",
     "price_start": null,
-    "price_text": "Price\n\nAvailable on Request",
+    "price_in_lakhs": "Price\n\nAvailable on Request",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1094,7 +1094,7 @@
     "location": "INR2.99 Cr. onwards",
     "full_address": "INR2.99 Cr. onwards",
     "price_start": 29900000,
-    "price_text": "INR2.99 Cr. onwards",
+    "price_in_lakhs": "INR2.99 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1132,7 +1132,7 @@
     "location": "INR8.40 Cr. onwards",
     "full_address": "INR8.40 Cr. onwards",
     "price_start": 84000000,
-    "price_text": "INR8.40 Cr. onwards",
+    "price_in_lakhs": "INR8.40 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1171,7 +1171,7 @@
     "location": "INR2.35 Cr. onwards",
     "full_address": "INR2.35 Cr. onwards",
     "price_start": 23500000,
-    "price_text": "INR2.35 Cr. onwards",
+    "price_in_lakhs": "INR2.35 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1200,7 +1200,7 @@
     "location": "INR3.20 Cr. onwards",
     "full_address": "INR3.20 Cr. onwards",
     "price_start": 32000000,
-    "price_text": "INR3.20 Cr. onwards",
+    "price_in_lakhs": "INR3.20 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -1234,7 +1234,7 @@
     "location": "INR8.76 Cr. onwards",
     "full_address": "INR8.76 Cr. onwards",
     "price_start": 87600000,
-    "price_text": "INR8.76 Cr. onwards",
+    "price_in_lakhs": "INR8.76 Cr. onwards",
     "configurations": [
       "2025\nRK",
       "3BHK"
@@ -1269,7 +1269,7 @@
     "location": "Price\n\nAvailable on Request",
     "full_address": "Price\n\nAvailable on Request",
     "price_start": null,
-    "price_text": "Price\n\nAvailable on Request",
+    "price_in_lakhs": "Price\n\nAvailable on Request",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1304,7 +1304,7 @@
     "location": "INR1.99 Cr. onwards",
     "full_address": "INR1.99 Cr. onwards",
     "price_start": 19900000,
-    "price_text": "INR1.99 Cr. onwards",
+    "price_in_lakhs": "INR1.99 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -1339,7 +1339,7 @@
     "location": "INR5.51 Cr. onwards",
     "full_address": "INR5.51 Cr. onwards",
     "price_start": 55100000,
-    "price_text": "INR5.51 Cr. onwards",
+    "price_in_lakhs": "INR5.51 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1373,7 +1373,7 @@
     "location": "Price\n\nAvailable on Request",
     "full_address": "Price\n\nAvailable on Request",
     "price_start": null,
-    "price_text": "Price\n\nAvailable on Request",
+    "price_in_lakhs": "Price\n\nAvailable on Request",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1408,7 +1408,7 @@
     "location": "INR6.62 Cr. onwards",
     "full_address": "INR6.62 Cr. onwards",
     "price_start": 66200000,
-    "price_text": "INR6.62 Cr. onwards",
+    "price_in_lakhs": "INR6.62 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -1444,7 +1444,7 @@
     "location": "INR1.89 Cr. onwards",
     "full_address": "INR1.89 Cr. onwards",
     "price_start": 18900000,
-    "price_text": "INR1.89 Cr. onwards",
+    "price_in_lakhs": "INR1.89 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1479,7 +1479,7 @@
     "location": "INR44.99 Lakh onwards",
     "full_address": "INR44.99 Lakh onwards",
     "price_start": 4499000,
-    "price_text": "INR44.99 Lakh onwards",
+    "price_in_lakhs": "INR44.99 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK"
@@ -1513,7 +1513,7 @@
     "location": "INR1.38 Cr. onwards",
     "full_address": "INR1.38 Cr. onwards",
     "price_start": 13799999,
-    "price_text": "INR1.38 Cr. onwards",
+    "price_in_lakhs": "INR1.38 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -1549,7 +1549,7 @@
     "location": "INR43.99 Lakh onwards",
     "full_address": "INR43.99 Lakh onwards",
     "price_start": 4399000,
-    "price_text": "INR43.99 Lakh onwards",
+    "price_in_lakhs": "INR43.99 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -1585,7 +1585,7 @@
     "location": "INR1.82 Cr. onwards",
     "full_address": "INR1.82 Cr. onwards",
     "price_start": 18200000,
-    "price_text": "INR1.82 Cr. onwards",
+    "price_in_lakhs": "INR1.82 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1619,7 +1619,7 @@
     "location": "INR1.25 Cr. onwards",
     "full_address": "INR1.25 Cr. onwards",
     "price_start": 12500000,
-    "price_text": "INR1.25 Cr. onwards",
+    "price_in_lakhs": "INR1.25 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1654,7 +1654,7 @@
     "location": "INR2.35 Cr. onwards",
     "full_address": "INR2.35 Cr. onwards",
     "price_start": 23500000,
-    "price_text": "INR2.35 Cr. onwards",
+    "price_in_lakhs": "INR2.35 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1688,7 +1688,7 @@
     "location": "INR69.55 Lakh onwards",
     "full_address": "INR69.55 Lakh onwards",
     "price_start": 6955000,
-    "price_text": "INR69.55 Lakh onwards",
+    "price_in_lakhs": "INR69.55 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK"
@@ -1723,7 +1723,7 @@
     "location": "INR39.99 Lakh onwards",
     "full_address": "INR39.99 Lakh onwards",
     "price_start": 3999000,
-    "price_text": "INR39.99 Lakh onwards",
+    "price_in_lakhs": "INR39.99 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK"
@@ -1758,7 +1758,7 @@
     "location": "INR3.25 Cr. onwards",
     "full_address": "INR3.25 Cr. onwards",
     "price_start": 32500000,
-    "price_text": "INR3.25 Cr. onwards",
+    "price_in_lakhs": "INR3.25 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -1792,7 +1792,7 @@
     "location": "INR1.45 Cr. onwards",
     "full_address": "INR1.45 Cr. onwards",
     "price_start": 14500000,
-    "price_text": "INR1.45 Cr. onwards",
+    "price_in_lakhs": "INR1.45 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -1828,7 +1828,7 @@
     "location": "INR36.99 Lakh onwards",
     "full_address": "INR36.99 Lakh onwards",
     "price_start": 3699000,
-    "price_text": "INR36.99 Lakh onwards",
+    "price_in_lakhs": "INR36.99 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -1862,7 +1862,7 @@
     "location": "INR8.31 Cr. onwards",
     "full_address": "INR8.31 Cr. onwards",
     "price_start": 83100000,
-    "price_text": "INR8.31 Cr. onwards",
+    "price_in_lakhs": "INR8.31 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1897,7 +1897,7 @@
     "location": "INR6.28 Cr. onwards",
     "full_address": "INR6.28 Cr. onwards",
     "price_start": 62800000,
-    "price_text": "INR6.28 Cr. onwards",
+    "price_in_lakhs": "INR6.28 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1932,7 +1932,7 @@
     "location": "INR10.34 Cr. onwards",
     "full_address": "INR10.34 Cr. onwards",
     "price_start": 103400000,
-    "price_text": "INR10.34 Cr. onwards",
+    "price_in_lakhs": "INR10.34 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -1965,7 +1965,7 @@
     "location": "INR15.13 Cr. onwards",
     "full_address": "INR15.13 Cr. onwards",
     "price_start": 151300000,
-    "price_text": "INR15.13 Cr. onwards",
+    "price_in_lakhs": "INR15.13 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -2000,7 +2000,7 @@
     "location": "INR3.81 Cr. onwards",
     "full_address": "INR3.81 Cr. onwards",
     "price_start": 38100000,
-    "price_text": "INR3.81 Cr. onwards",
+    "price_in_lakhs": "INR3.81 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -2033,7 +2033,7 @@
     "location": null,
     "full_address": null,
     "price_start": null,
-    "price_text": null,
+    "price_in_lakhs": null,
     "configurations": [],
     "area_sqft": null,
     "description": null,
@@ -2059,7 +2059,7 @@
     "location": "INR6.13 Cr. onwards",
     "full_address": "INR6.13 Cr. onwards",
     "price_start": 61300000,
-    "price_text": "INR6.13 Cr. onwards",
+    "price_in_lakhs": "INR6.13 Cr. onwards",
     "configurations": [
       "2.5BHK",
       "3.5BHK",
@@ -2096,7 +2096,7 @@
     "location": "INR5.88 Cr. onwards",
     "full_address": "INR5.88 Cr. onwards",
     "price_start": 58800000,
-    "price_text": "INR5.88 Cr. onwards",
+    "price_in_lakhs": "INR5.88 Cr. onwards",
     "configurations": [
       "4BHK"
     ],
@@ -2129,7 +2129,7 @@
     "location": "INR1.62 Cr. onwards",
     "full_address": "INR1.62 Cr. onwards",
     "price_start": 16200000,
-    "price_text": "INR1.62 Cr. onwards",
+    "price_in_lakhs": "INR1.62 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2167,7 +2167,7 @@
     "location": "INR1.95 Cr. onwards",
     "full_address": "INR1.95 Cr. onwards",
     "price_start": 19500000,
-    "price_text": "INR1.95 Cr. onwards",
+    "price_in_lakhs": "INR1.95 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -2203,7 +2203,7 @@
     "location": "INR3.17 Cr. onwards",
     "full_address": "INR3.17 Cr. onwards",
     "price_start": 31700000,
-    "price_text": "INR3.17 Cr. onwards",
+    "price_in_lakhs": "INR3.17 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -2240,7 +2240,7 @@
     "location": "INR3.17 Cr. onwards",
     "full_address": "INR3.17 Cr. onwards",
     "price_start": 31700000,
-    "price_text": "INR3.17 Cr. onwards",
+    "price_in_lakhs": "INR3.17 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2278,7 +2278,7 @@
     "location": "INR74.15 Lakh onwards",
     "full_address": "INR74.15 Lakh onwards",
     "price_start": 7415000,
-    "price_text": "INR74.15 Lakh onwards",
+    "price_in_lakhs": "INR74.15 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2316,7 +2316,7 @@
     "location": "INR2.50 Cr. onwards",
     "full_address": "INR2.50 Cr. onwards",
     "price_start": 25000000,
-    "price_text": "INR2.50 Cr. onwards",
+    "price_in_lakhs": "INR2.50 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -2353,7 +2353,7 @@
     "location": "INR82.78 Lakh onwards",
     "full_address": "INR82.78 Lakh onwards",
     "price_start": 8278000,
-    "price_text": "INR82.78 Lakh onwards",
+    "price_in_lakhs": "INR82.78 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2391,7 +2391,7 @@
     "location": "INR55.86 Lakh onwards",
     "full_address": "INR55.86 Lakh onwards",
     "price_start": 5586000,
-    "price_text": "INR55.86 Lakh onwards",
+    "price_in_lakhs": "INR55.86 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2429,7 +2429,7 @@
     "location": "INR75.95 Lakh onwards",
     "full_address": "INR75.95 Lakh onwards",
     "price_start": 7595000,
-    "price_text": "INR75.95 Lakh onwards",
+    "price_in_lakhs": "INR75.95 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -2466,7 +2466,7 @@
     "location": "INR18.61 Cr. onwards",
     "full_address": "INR18.61 Cr. onwards",
     "price_start": 186100000,
-    "price_text": "INR18.61 Cr. onwards",
+    "price_in_lakhs": "INR18.61 Cr. onwards",
     "configurations": [
       "1BHK",
       "3BHK",
@@ -2503,7 +2503,7 @@
     "location": "INR6.14 Cr. onwards",
     "full_address": "INR6.14 Cr. onwards",
     "price_start": 61400000,
-    "price_text": "INR6.14 Cr. onwards",
+    "price_in_lakhs": "INR6.14 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2539,7 +2539,7 @@
     "location": "INR6.14 Cr. onwards",
     "full_address": "INR6.14 Cr. onwards",
     "price_start": 61400000,
-    "price_text": "INR6.14 Cr. onwards",
+    "price_in_lakhs": "INR6.14 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2576,7 +2576,7 @@
     "location": "INR2.53 Cr. onwards",
     "full_address": "INR2.53 Cr. onwards",
     "price_start": 25299999,
-    "price_text": "INR2.53 Cr. onwards",
+    "price_in_lakhs": "INR2.53 Cr. onwards",
     "configurations": [
       "3.5BHK",
       "3BHK",
@@ -2610,7 +2610,7 @@
     "location": "INR1.18 Cr. onwards",
     "full_address": "INR1.18 Cr. onwards",
     "price_start": 11800000,
-    "price_text": "INR1.18 Cr. onwards",
+    "price_in_lakhs": "INR1.18 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -2645,7 +2645,7 @@
     "location": "INR1.60 Cr. onwards",
     "full_address": "INR1.60 Cr. onwards",
     "price_start": 16000000,
-    "price_text": "INR1.60 Cr. onwards",
+    "price_in_lakhs": "INR1.60 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -2680,7 +2680,7 @@
     "location": "INR1.79 Cr. onwards",
     "full_address": "INR1.79 Cr. onwards",
     "price_start": 17900000,
-    "price_text": "INR1.79 Cr. onwards",
+    "price_in_lakhs": "INR1.79 Cr. onwards",
     "configurations": [
       "3BHK"
     ],
@@ -2708,7 +2708,7 @@
     "location": "INR2.38 Cr. onwards",
     "full_address": "INR2.38 Cr. onwards",
     "price_start": 23800000,
-    "price_text": "INR2.38 Cr. onwards",
+    "price_in_lakhs": "INR2.38 Cr. onwards",
     "configurations": [
       "3.5BHK",
       "3BHK"
@@ -2745,7 +2745,7 @@
     "location": "INR4.10 Cr. onwards",
     "full_address": "INR4.10 Cr. onwards",
     "price_start": 41000000,
-    "price_text": "INR4.10 Cr. onwards",
+    "price_in_lakhs": "INR4.10 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -2775,7 +2775,7 @@
     "location": "INR2.79 Cr. onwards",
     "full_address": "INR2.79 Cr. onwards",
     "price_start": 27900000,
-    "price_text": "INR2.79 Cr. onwards",
+    "price_in_lakhs": "INR2.79 Cr. onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2812,7 +2812,7 @@
     "location": "INR1.30 Cr. onwards",
     "full_address": "INR1.30 Cr. onwards",
     "price_start": 13000000,
-    "price_text": "INR1.30 Cr. onwards",
+    "price_in_lakhs": "INR1.30 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -2846,7 +2846,7 @@
     "location": "INR1.10 Cr. onwards",
     "full_address": "INR1.10 Cr. onwards",
     "price_start": 11000000,
-    "price_text": "INR1.10 Cr. onwards",
+    "price_in_lakhs": "INR1.10 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -2881,7 +2881,7 @@
     "location": "Price\n\nAvailable on Request",
     "full_address": "Price\n\nAvailable on Request",
     "price_start": null,
-    "price_text": "Price\n\nAvailable on Request",
+    "price_in_lakhs": "Price\n\nAvailable on Request",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2917,7 +2917,7 @@
     "location": "Price\n\nAvailable on Request",
     "full_address": "Price\n\nAvailable on Request",
     "price_start": null,
-    "price_text": "Price\n\nAvailable on Request",
+    "price_in_lakhs": "Price\n\nAvailable on Request",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -2953,7 +2953,7 @@
     "location": "INR1.25 Cr. onwards",
     "full_address": "INR1.25 Cr. onwards",
     "price_start": 12500000,
-    "price_text": "INR1.25 Cr. onwards",
+    "price_in_lakhs": "INR1.25 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -2988,7 +2988,7 @@
     "location": "INR1.70 Cr. onwards",
     "full_address": "INR1.70 Cr. onwards",
     "price_start": 17000000,
-    "price_text": "INR1.70 Cr. onwards",
+    "price_in_lakhs": "INR1.70 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -3022,7 +3022,7 @@
     "location": "INR75.00 Lakh onwards",
     "full_address": "INR75.00 Lakh onwards",
     "price_start": 7500000,
-    "price_text": "INR75.00 Lakh onwards",
+    "price_in_lakhs": "INR75.00 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3056,7 +3056,7 @@
     "location": "INR1.07 Cr. onwards",
     "full_address": "INR1.07 Cr. onwards",
     "price_start": 10700000,
-    "price_text": "INR1.07 Cr. onwards",
+    "price_in_lakhs": "INR1.07 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3090,7 +3090,7 @@
     "location": "INR1.29 Cr. onwards",
     "full_address": "INR1.29 Cr. onwards",
     "price_start": 12900000,
-    "price_text": "INR1.29 Cr. onwards",
+    "price_in_lakhs": "INR1.29 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3119,7 +3119,7 @@
     "location": "INR89.99 Lakh onwards",
     "full_address": "INR89.99 Lakh onwards",
     "price_start": 8999000,
-    "price_text": "INR89.99 Lakh onwards",
+    "price_in_lakhs": "INR89.99 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3159,7 +3159,7 @@
     "location": "INR74.00 Lakh onwards",
     "full_address": "INR74.00 Lakh onwards",
     "price_start": 7400000,
-    "price_text": "INR74.00 Lakh onwards",
+    "price_in_lakhs": "INR74.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3195,7 +3195,7 @@
     "location": "INR3.45 Cr. onwards",
     "full_address": "INR3.45 Cr. onwards",
     "price_start": 34500000,
-    "price_text": "INR3.45 Cr. onwards",
+    "price_in_lakhs": "INR3.45 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -3227,7 +3227,7 @@
     "location": "INR1.99 Cr. onwards",
     "full_address": "INR1.99 Cr. onwards",
     "price_start": 19900000,
-    "price_text": "INR1.99 Cr. onwards",
+    "price_in_lakhs": "INR1.99 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -3264,7 +3264,7 @@
     "location": "INR1.09 Cr. onwards",
     "full_address": "INR1.09 Cr. onwards",
     "price_start": 10900000,
-    "price_text": "INR1.09 Cr. onwards",
+    "price_in_lakhs": "INR1.09 Cr. onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3297,7 +3297,7 @@
     "location": "INR2.50 Cr. onwards",
     "full_address": "INR2.50 Cr. onwards",
     "price_start": 25000000,
-    "price_text": "INR2.50 Cr. onwards",
+    "price_in_lakhs": "INR2.50 Cr. onwards",
     "configurations": [
       "3BHK"
     ],
@@ -3330,7 +3330,7 @@
     "location": "INR85.00 Lakh onwards",
     "full_address": "INR85.00 Lakh onwards",
     "price_start": 8500000,
-    "price_text": "INR85.00 Lakh onwards",
+    "price_in_lakhs": "INR85.00 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3364,7 +3364,7 @@
     "location": "INR82.00 Lakh onwards",
     "full_address": "INR82.00 Lakh onwards",
     "price_start": 8200000,
-    "price_text": "INR82.00 Lakh onwards",
+    "price_in_lakhs": "INR82.00 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3400,7 +3400,7 @@
     "location": "INR99.00 Lakh onwards",
     "full_address": "INR99.00 Lakh onwards",
     "price_start": 9900000,
-    "price_text": "INR99.00 Lakh onwards",
+    "price_in_lakhs": "INR99.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3435,7 +3435,7 @@
     "location": "INR59.00 Lakh onwards",
     "full_address": "INR59.00 Lakh onwards",
     "price_start": 5900000,
-    "price_text": "INR59.00 Lakh onwards",
+    "price_in_lakhs": "INR59.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3469,7 +3469,7 @@
     "location": "INR41.60 Lakh onwards",
     "full_address": "INR41.60 Lakh onwards",
     "price_start": 4160000,
-    "price_text": "INR41.60 Lakh onwards",
+    "price_in_lakhs": "INR41.60 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3505,7 +3505,7 @@
     "location": "INR54.04 Lakh onwards",
     "full_address": "INR54.04 Lakh onwards",
     "price_start": 5404000,
-    "price_text": "INR54.04 Lakh onwards",
+    "price_in_lakhs": "INR54.04 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3541,7 +3541,7 @@
     "location": "INR54.00 Lakh onwards",
     "full_address": "INR54.00 Lakh onwards",
     "price_start": 5400000,
-    "price_text": "INR54.00 Lakh onwards",
+    "price_in_lakhs": "INR54.00 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3577,7 +3577,7 @@
     "location": "INR45.20 Lakh onwards",
     "full_address": "INR45.20 Lakh onwards",
     "price_start": 4520000,
-    "price_text": "INR45.20 Lakh onwards",
+    "price_in_lakhs": "INR45.20 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3613,7 +3613,7 @@
     "location": "INR65.74 Lakh onwards",
     "full_address": "INR65.74 Lakh onwards",
     "price_start": 6573999,
-    "price_text": "INR65.74 Lakh onwards",
+    "price_in_lakhs": "INR65.74 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3648,7 +3648,7 @@
     "location": "INR72.00 Lakh onwards",
     "full_address": "INR72.00 Lakh onwards",
     "price_start": 7200000,
-    "price_text": "INR72.00 Lakh onwards",
+    "price_in_lakhs": "INR72.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3683,7 +3683,7 @@
     "location": "INR54.38 Lakh onwards",
     "full_address": "INR54.38 Lakh onwards",
     "price_start": 5438000,
-    "price_text": "INR54.38 Lakh onwards",
+    "price_in_lakhs": "INR54.38 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -3719,7 +3719,7 @@
     "location": "INR63.80 Lakh onwards",
     "full_address": "INR63.80 Lakh onwards",
     "price_start": 6380000,
-    "price_text": "INR63.80 Lakh onwards",
+    "price_in_lakhs": "INR63.80 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3754,7 +3754,7 @@
     "location": "INR54.00 Lakh onwards",
     "full_address": "INR54.00 Lakh onwards",
     "price_start": 5400000,
-    "price_text": "INR54.00 Lakh onwards",
+    "price_in_lakhs": "INR54.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3788,7 +3788,7 @@
     "location": "INR2.52 Cr. onwards",
     "full_address": "INR2.52 Cr. onwards",
     "price_start": 25200000,
-    "price_text": "INR2.52 Cr. onwards",
+    "price_in_lakhs": "INR2.52 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -3821,7 +3821,7 @@
     "location": "INR76.99 Lakh onwards",
     "full_address": "INR76.99 Lakh onwards",
     "price_start": 7698999,
-    "price_text": "INR76.99 Lakh onwards",
+    "price_in_lakhs": "INR76.99 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -3856,7 +3856,7 @@
     "location": "INR45.00 Lakh onwards",
     "full_address": "INR45.00 Lakh onwards",
     "price_start": 4500000,
-    "price_text": "INR45.00 Lakh onwards",
+    "price_in_lakhs": "INR45.00 Lakh onwards",
     "configurations": [],
     "area_sqft": "24,000 sq.ft",
     "description": "Find your perfect home at Godrej Zen Estate with premium amenities and a location that keeps you connected.",
@@ -3887,7 +3887,7 @@
     "location": "INR2.49 Cr. onwards",
     "full_address": "INR2.49 Cr. onwards",
     "price_start": 24900000,
-    "price_text": "INR2.49 Cr. onwards",
+    "price_in_lakhs": "INR2.49 Cr. onwards",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -3920,7 +3920,7 @@
     "location": "INR56.00 Lakh onwards",
     "full_address": "INR56.00 Lakh onwards",
     "price_start": 5600000,
-    "price_text": "INR56.00 Lakh onwards",
+    "price_in_lakhs": "INR56.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3953,7 +3953,7 @@
     "location": "INR53.00 Lakh onwards",
     "full_address": "INR53.00 Lakh onwards",
     "price_start": 5300000,
-    "price_text": "INR53.00 Lakh onwards",
+    "price_in_lakhs": "INR53.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -3987,7 +3987,7 @@
     "location": "INR59.00 Lakh onwards",
     "full_address": "INR59.00 Lakh onwards",
     "price_start": 5900000,
-    "price_text": "INR59.00 Lakh onwards",
+    "price_in_lakhs": "INR59.00 Lakh onwards",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -4022,7 +4022,7 @@
     "location": "INR61.00 Lakh onwards",
     "full_address": "INR61.00 Lakh onwards",
     "price_start": 6100000,
-    "price_text": "INR61.00 Lakh onwards",
+    "price_in_lakhs": "INR61.00 Lakh onwards",
     "configurations": [
       "2BHK",
       "3BHK"
@@ -4054,7 +4054,7 @@
     "location": "Marathahalli - Whitefield Road, Bangalore - 560066.",
     "full_address": "Marathahalli - Whitefield Road, Bangalore - 560066.",
     "price_start": 560066,
-    "price_text": "Marathahalli - Whitefield Road, Bangalore - 560066.",
+    "price_in_lakhs": "Marathahalli - Whitefield Road, Bangalore - 560066.",
     "configurations": [
       "2BHK",
       "3.5BHK",
@@ -4097,7 +4097,7 @@
     "location": "SH 35, Whitefield Main Rd, Whitefield, Varthur, Bangalore - 560066",
     "full_address": "SH 35, Whitefield Main Rd, Whitefield, Varthur, Bangalore - 560066",
     "price_start": 35,
-    "price_text": "SH 35, Whitefield Main Rd, Whitefield, Varthur, Bangalore - 560066",
+    "price_in_lakhs": "SH 35, Whitefield Main Rd, Whitefield, Varthur, Bangalore - 560066",
     "configurations": [
       "4BHK"
     ],
@@ -4129,7 +4129,7 @@
     "location": "Hobli, Devanahalli, Singarahalli, Kundana, Karnataka 562110, Bangalore - 562110",
     "full_address": "Hobli, Devanahalli, Singarahalli, Kundana, Karnataka 562110, Bangalore - 562110",
     "price_start": 562110,
-    "price_text": "Hobli, Devanahalli, Singarahalli, Kundana, Karnataka 562110, Bangalore - 562110",
+    "price_in_lakhs": "Hobli, Devanahalli, Singarahalli, Kundana, Karnataka 562110, Bangalore - 562110",
     "configurations": [],
     "area_sqft": null,
     "description": "SCULPT A BRILLIANT FUTURE \n\nIt’s time to unveil a future shimmering with promise, in which your lifestyle aspirations and investment goals come together in perfect harmony.\n\nWelcome to Prestige Crystal Lawns, a brilliant planned plotted development, designed for those who know that tomorrow begins with the choices they make today.\n\nDiscover a brighter, better life. A life close to nature, close to convenience, and closer still to the dreams you see in your own crystal ball.\n\nLIVE IN A SPARKLING SETTING \n\nLocated on the fast-evolving IVC Road, close to NH44/Bellary Road and just a short drive from the Airport, Prestige Crystal Lawns places you at the heart of Bengaluru’s growth corridor, where the future is already taking shape.\n\nPremier schools, colleges, sporting hubs, and leisure resorts emerge into view, signs of a vibrant tomorrow where every convenience is within your reach.\n\nSCRIPT EVERY FACET OF YOUR STORY \n\nShape your home, design your lifestyle, script your story, exactly as you have always imagined it. Choose from 233 thoughtfully laid out premium plots in 60x40 sft and 50x80 sft configurations spread across 24.3 acres of pristine land. Or, if your lifestyle demands more space, opt for one of a select number of larger plots. Prestige Crystal Lawns opens the door to the future you have dreamed of, where you can live life as large as you want to.\n\nCHISEL ON NATURE’S CRYSTAL \n\nAt the very heart of Prestige Crystal Lawns lies a massive central park, it’s refreshing, gre",
@@ -4161,7 +4161,7 @@
     "location": "Akshayanagar, Bannerghatta Road, Bangalore - 560076",
     "full_address": "Akshayanagar, Bannerghatta Road, Bangalore - 560076",
     "price_start": 560076,
-    "price_text": "Akshayanagar, Bannerghatta Road, Bangalore - 560076",
+    "price_in_lakhs": "Akshayanagar, Bannerghatta Road, Bangalore - 560076",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -4209,7 +4209,7 @@
     "location": "Whitefield, Bangalore - 560066",
     "full_address": "Whitefield, Bangalore - 560066",
     "price_start": 560066,
-    "price_text": "Whitefield, Bangalore - 560066",
+    "price_in_lakhs": "Whitefield, Bangalore - 560066",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -4247,7 +4247,7 @@
     "location": "Whitefield, Bangalore - 560087",
     "full_address": "Whitefield, Bangalore - 560087",
     "price_start": 560087,
-    "price_text": "Whitefield, Bangalore - 560087",
+    "price_in_lakhs": "Whitefield, Bangalore - 560087",
     "configurations": [
       "3BHK",
       "4BHK",
@@ -4298,7 +4298,7 @@
     "location": "Jigani Rd, Electronic City, Bengaluru, Bommasandra, Bangalore - 560099",
     "full_address": "Jigani Rd, Electronic City, Bengaluru, Bommasandra, Bangalore - 560099",
     "price_start": 560099,
-    "price_text": "Jigani Rd, Electronic City, Bengaluru, Bommasandra, Bangalore - 560099",
+    "price_in_lakhs": "Jigani Rd, Electronic City, Bengaluru, Bommasandra, Bangalore - 560099",
     "configurations": [
       "1BHK",
       "2BHK",
@@ -4346,7 +4346,7 @@
     "location": "Pallavaram-Thuraipakkam Rd, Iswarya Nagar, Nemilichery, Pallavaram, Chennai, Tamil Nadu 600043, Chennai - 600043",
     "full_address": "Pallavaram-Thuraipakkam Rd, Iswarya Nagar, Nemilichery, Pallavaram, Chennai, Tamil Nadu 600043, Chennai - 600043",
     "price_start": 600043,
-    "price_text": "Pallavaram-Thuraipakkam Rd, Iswarya Nagar, Nemilichery, Pallavaram, Chennai, Tamil Nadu 600043, Chennai - 600043",
+    "price_in_lakhs": "Pallavaram-Thuraipakkam Rd, Iswarya Nagar, Nemilichery, Pallavaram, Chennai, Tamil Nadu 600043, Chennai - 600043",
     "configurations": [],
     "area_sqft": null,
     "description": "LIVE WHERE HISTORY MEETS THE FUTURE\n\nPallavaram is considered to be the oldest inhabited place in South India. Today it is the fastest developing and most booming of Chennai’s suburbs. A home here thus enables you to enjoy both the pride of historic stature and the convenience of contemporary infrastructure and amenities.\n\nAnd what better place to make your home than Prestige Pallavaram Gardens, a premium enclave of 2069 two-bed, three-bed and four-bed homes, that adds to to Pallavaram the unmistakable Prestige stamp of quality and class.\n\nENJOY EXCELLENT ACCESS AND CONNECTIVITY\n\nPallavaram is one of the best-connected of Chennai’s neighbourhoods. It is connected by both Old Mahabalipuram Road and Pallavaram-Thuraipakkam Radial Road. Other arterial roads such as East Coast Road and the Outer Ring Road are close by. And the Airport is just 20 minutes away via the Grand Southern Trunk Road (NH45).\n\nLIVE THE EASY COMMUTE LIFE\n\nBid goodbye to commuting headaches as your home in Prestige Pallavaram Gardens is a short and easy drive from work.\n\nProminent IT Parks, like the Chennai Trade Centre and Olympia Tech Park, and the SIDCO Industrial Estate are all just half an hour away. And major localities like Velachery and Guindy, which house several major tech parks and SEZs are nearby as well.\n\nEXPERIENCE CONVENIENCE AT YOUR FINGERTIPS\n\nPallavaram is also home to the full range of high profile social amenities, including premium schools, shopping centres, hotels, restaurants, healthca",
@@ -4376,7 +4376,7 @@
     "location": "Metro Pillar No 209, NH Bypass, North Kalamassery, Cochin - 683106",
     "full_address": "Metro Pillar No 209, NH Bypass, North Kalamassery, Cochin - 683106",
     "price_start": 209,
-    "price_text": "Metro Pillar No 209, NH Bypass, North Kalamassery, Cochin - 683106",
+    "price_in_lakhs": "Metro Pillar No 209, NH Bypass, North Kalamassery, Cochin - 683106",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -4419,7 +4419,7 @@
     "location": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "full_address": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "price_start": 240000000,
-    "price_text": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
+    "price_in_lakhs": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "configurations": [],
     "area_sqft": null,
     "description": "Set at the entrance of the community, Mayflower overlooks a huge open space and is adjacent to a 2-acre garden that is part of The Prestige City's frontage. It is made up of two residential blocks – Fern & Gulmohar, each rising 41 floors high. Mayflower offers a limited selection of three and four bed homes, as well as duplexes on the ground floor and Sky Mansions on the uppermost floors.\n\nMayflower offers the advantage of being an exclusive parcel as it enjoys its own separate access from the main entry road besides the common entry through the 7+ acre green buffer zone and retail complex. Further, the 33,000 sft Mayflower Clubhouse is exclusively for residents of Mayflower only.\n\nFERN – Consisting of two towers, Fern has only four homes per floor, which means you have just one common wall to maximise privacy and have more open sides. Fern’s towers are located on the periphery and overlook the clubhouse and amenities. Fern offers larger family apartments such as 3-Bed Ultima and 4-Bed Magnus.\n\nGULMOHAR – Spread alongside the eastern boulevard, Gulmohar houses two towers, rising 41 floors high. Thanks to the cross-shaped floor plates of the towers, there is only one common wall between the four units on each floor, which maximises your privacy and gives you three open sides. Gulmohar presents larger family apartments such as Three-Bed Ultima and Four-Bed Magnus.",
@@ -4449,7 +4449,7 @@
     "location": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "full_address": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "price_start": 240000000,
-    "price_text": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
+    "price_in_lakhs": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -4485,7 +4485,7 @@
     "location": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "full_address": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "price_start": 240000000,
-    "price_text": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
+    "price_in_lakhs": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -4523,7 +4523,7 @@
     "location": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "full_address": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "price_start": 240000000,
-    "price_text": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
+    "price_in_lakhs": "The Prestige City, NH-24, Extension, Delhi-NCR - 201010",
     "configurations": [
       "2BHK",
       "3BHK",
@@ -4565,7 +4565,7 @@
     "location": "Plot no: 5, Manasa Hills, Rajendranagar mandal, Budwel, Hyderabad, Telangana 500030, Hyderabad - 500030",
     "full_address": "Plot no: 5, Manasa Hills, Rajendranagar mandal, Budwel, Hyderabad, Telangana 500030, Hyderabad - 500030",
     "price_start": 5,
-    "price_text": "Plot no: 5, Manasa Hills, Rajendranagar mandal, Budwel, Hyderabad, Telangana 500030, Hyderabad - 500030",
+    "price_in_lakhs": "Plot no: 5, Manasa Hills, Rajendranagar mandal, Budwel, Hyderabad, Telangana 500030, Hyderabad - 500030",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -4609,7 +4609,7 @@
     "location": "Rajendra Nagar, Hyderabad - 500030",
     "full_address": "Rajendra Nagar, Hyderabad - 500030",
     "price_start": 500030,
-    "price_text": "Rajendra Nagar, Hyderabad - 500030",
+    "price_in_lakhs": "Rajendra Nagar, Hyderabad - 500030",
     "configurations": [
       "4BHK",
       "5BHK"
@@ -4650,7 +4650,7 @@
     "location": "Chitrapuri Hills Road, Located near KIMS Hospital, At Raidurg, Gachibowli, Hyderabad - 500032",
     "full_address": "Chitrapuri Hills Road, Located near KIMS Hospital, At Raidurg, Gachibowli, Hyderabad - 500032",
     "price_start": 500032,
-    "price_text": "Chitrapuri Hills Road, Located near KIMS Hospital, At Raidurg, Gachibowli, Hyderabad - 500032",
+    "price_in_lakhs": "Chitrapuri Hills Road, Located near KIMS Hospital, At Raidurg, Gachibowli, Hyderabad - 500032",
     "configurations": [
       "4BHK",
       "5BHK"
@@ -4692,7 +4692,7 @@
     "location": "Rajendra Nagar, Budwel, Hyderabad - 500052",
     "full_address": "Rajendra Nagar, Budwel, Hyderabad - 500052",
     "price_start": 500052,
-    "price_text": "Rajendra Nagar, Budwel, Hyderabad - 500052",
+    "price_in_lakhs": "Rajendra Nagar, Budwel, Hyderabad - 500052",
     "configurations": [
       "5BHK"
     ],
@@ -4724,7 +4724,7 @@
     "location": "Rajendra Nagar, Budwel, Hyderabad - 500052",
     "full_address": "Rajendra Nagar, Budwel, Hyderabad - 500052",
     "price_start": 500052,
-    "price_text": "Rajendra Nagar, Budwel, Hyderabad - 500052",
+    "price_in_lakhs": "Rajendra Nagar, Budwel, Hyderabad - 500052",
     "configurations": [],
     "area_sqft": null,
     "description": "The 4647 apartments at The Prestige City, Hyderabad, represent a new scale of living in Hyderabad. Set in 13 towers that rise 42 floors high, they promise an unparalleled quality of life in the city.\n\nThe towers and apartments in Rajendra nagar, are oriented so that every home enjoys a maximum of privacy, as well as brilliant views. As a result, your apartment is a haven of bright, natural light and cool fresh air.\n\nEvery home is Vaastu compliant.\n\nThe homes have been consciously sized for convenient family living, The room dimensions are sensible and designed to maximize usable area while minimizing circulation space.\n\nLife will be wholesome, convenient and comfortable.",
@@ -4754,7 +4754,7 @@
     "location": "Kokapet, Hyderabad - 500075",
     "full_address": "Kokapet, Hyderabad - 500075",
     "price_start": 500075,
-    "price_text": "Kokapet, Hyderabad - 500075",
+    "price_in_lakhs": "Kokapet, Hyderabad - 500075",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -4802,7 +4802,7 @@
     "location": "West Hill, Beach Road, Kozhikode, Kerala 673005, Calicut, Kozhikode - 673005",
     "full_address": "West Hill, Beach Road, Kozhikode, Kerala 673005, Calicut, Kozhikode - 673005",
     "price_start": 673005,
-    "price_text": "West Hill, Beach Road, Kozhikode, Kerala 673005, Calicut, Kozhikode - 673005",
+    "price_in_lakhs": "West Hill, Beach Road, Kozhikode, Kerala 673005, Calicut, Kozhikode - 673005",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -4847,7 +4847,7 @@
     "location": "Derlakatte, Off Mangaluru - Kochi National Highway, Mangalore - 575018",
     "full_address": "Derlakatte, Off Mangaluru - Kochi National Highway, Mangalore - 575018",
     "price_start": 575018,
-    "price_text": "Derlakatte, Off Mangaluru - Kochi National Highway, Mangalore - 575018",
+    "price_in_lakhs": "Derlakatte, Off Mangaluru - Kochi National Highway, Mangalore - 575018",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -4880,7 +4880,7 @@
     "location": "Western Express Hwy, near Singapore international school, Mahajan Wadi, Mira Road East, Mira Bhayandar, Mumbai - 401107",
     "full_address": "Western Express Hwy, near Singapore international school, Mahajan Wadi, Mira Road East, Mira Bhayandar, Mumbai - 401107",
     "price_start": 401107,
-    "price_text": "Western Express Hwy, near Singapore international school, Mahajan Wadi, Mira Road East, Mira Bhayandar, Mumbai - 401107",
+    "price_in_lakhs": "Western Express Hwy, near Singapore international school, Mahajan Wadi, Mira Road East, Mira Bhayandar, Mumbai - 401107",
     "configurations": [
       "STUDIO"
     ],
@@ -4912,7 +4912,7 @@
     "location": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
     "full_address": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
     "price_start": 400080,
-    "price_text": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
+    "price_in_lakhs": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
     "configurations": [],
     "area_sqft": null,
     "description": "Set at the foothills of Yogi Hills, a reserve within the Sanjay Gandhi National Park, The Prestige City offers an enduring experience where the tranquility of nature captivates your senses for a lifetime.\n\nAn inspiring blend of unmatched luxury and timeless natural beauty, the residences are designed to connect you with nature every day and let you partake in a tapestry of experiences that range from the serene to the sublime to the sophisticated.\n\nNature Is Calling - Own your peaceful abode\n\nPrestige City is located at foothills of Yogi Hills, Mulund with excellent connectivity to Eastern Express Highway and LBS Marg. The development enjoys close proximity to schools, shopping malls and healthcare facilities.",
@@ -4942,7 +4942,7 @@
     "location": "Off. Agrawal Road, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
     "full_address": "Off. Agrawal Road, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
     "price_start": 400080,
-    "price_text": "Off. Agrawal Road, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
+    "price_in_lakhs": "Off. Agrawal Road, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
     "configurations": [
       "3BHK",
       "4BHK"
@@ -4982,7 +4982,7 @@
     "location": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
     "full_address": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
     "price_start": 400080,
-    "price_text": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
+    "price_in_lakhs": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mumbai - 400080",
     "configurations": [
       "3BHK"
     ],
@@ -5019,7 +5019,7 @@
     "location": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
     "full_address": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
     "price_start": 400080,
-    "price_text": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
+    "price_in_lakhs": "Off, Agrawal Rd, Swapna Nagari, Yogi Hills, Mulund, Mumbai - 400080",
     "configurations": [],
     "area_sqft": null,
     "description": "Find a home that has more room for togetherness, more space to host family and friends and more reasons to enjoy every day moments. Discover the perfect place in form of a wrap around Sky Lounge overlooking the alluring cityscapes that doubles up to become the favourite place to celebrate life.",
