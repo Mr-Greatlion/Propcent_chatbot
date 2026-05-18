@@ -23,7 +23,9 @@ CORS_ORIGINS = [
     "https://chat.propcent.in",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://admin.propcent.in"
+    "https://admin.propcent.in",
+    "https://console.propcent.in/",
+    "https://console.propcent.in"
 ]
 
 # allow all propcent subdomains
