@@ -25,7 +25,7 @@ CORS_ORIGINS = [
     "http://127.0.0.1:3000",
     "https://admin.propcent.in",
     "https://console.propcent.in",
-    "https://propcent-console-v2.vercel.app/login"
+    "https://propcent-console-v2.vercel.app"
 ]
 
 # allow all propcent subdomains
